@@ -1,0 +1,148 @@
+<div class="filtres">
+	<select id="techSelect">
+		<option value="./">Toutes les technologies</option>
+		{% for langage in langages %}
+		<option value="?langage={{ langage }}">{{ langage }}</option>
+		{% endfor %}
+	</select>
+	<button id="resetButton" onclick="window.location.href='./'">
+		Réinitialiser
+	</button>
+</div>
+
+<div class="row">
+	{% for projet in projets %}
+	<div
+		class="projectbloc clickable col-12 col-md-3 m-3 p-4"
+		data-langages="{% for langage in projet.langages.all %}{{ langage.nom }}{% if not forloop.last %},{% endif %}{% endfor %}">
+		<img
+			src="{{ projet.image.url }}"
+			alt="{{ projet.titre }}"
+			class="img-fluid" />
+		<h2 class="titreprojet">{{ projet.titre }}</h2>
+		<div class="">
+			{% for langage in projet.langages.all %}
+			<span class="langages badge bg-light">{{ langage }}</span>
+
+			{% endfor %}
+		</div>
+		<span class="projetdescription">{{ projet.annee }}</span>
+
+		<div class="projetdescription">{{ projet.soustitre }}</div>
+		<a
+			href="#"
+			class="buttonp"
+			data-bs-toggle="modal"
+			data-bs-target="#projectDetailModal"
+			data-project-id="{{ projet.id }}"
+			data-project-title="{{ projet.titre }}"
+			data-project-description="{{ projet.description }}"
+			data-project-annee="{{ projet.annee }}"
+			data-project-urls="{% for lien in projet.liens.all %}{{ lien.url|safe }}{% if not forloop.last %}|||{% endif %}{% endfor %}"
+			data-project-intitules="{% for lien in projet.liens.all %}{{ lien.intitule|safe }}{% if not forloop.last %}|||{% endif %}{% endfor %}"
+			data-project-images="{% for img in projet.images.all %}{{ img.image.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
+			data-project-liens="{% for lien in projet.liens.all %}{{ lien.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
+			data-project-langages="{% for langage in projet.langages.all %}{{ langage }}{% if not forloop.last %},{% endif %}{% endfor %}"
+			>En savoir +</a
+		>
+		<!-- <div class="liens-projet">
+      {% for lien in projet.liens.all %}
+
+      <a href="{{ lien.url }}" target="_blank" class="buttonp"
+        >{{ lien.intitule }}
+      </a>
+    
+
+      {% endfor %}
+    </div> -->
+	</div>
+	{% endfor %}
+</div>
+
+<!-- MODALE POUR CHAQUE PROJET -->
+
+<div
+	class="modal fade"
+	id="projectDetailModal"
+	tabindex="-1"
+	aria-labelledby="projectDetailModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="projectDetailModalLabel">
+					{{ projet.titre }}
+				</h5>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="modal"
+					aria-label="Fermer"></button>
+			</div>
+			<div class="modal-body">
+				<h2 class="titreprojet"></h2>
+				<div class="liens-projet">
+					{% for lien in projet.liens.all %}
+
+					<a href="{{ lien.url }}" target="_blank" class="buttonp"
+						>{{ lien.intitule }}
+					</a>
+
+					{% endfor %}
+				</div>
+				<div class="projetdescription">{{ projet.description }}</div>
+				<div class="row">
+					<div id="carousel-{{ projet.id }}" class="carousel col-md-5 mx-5">
+						<div class="carousel-inner">
+							{% for img in projet.images.all %}
+							<div
+								class="carousel-item {% if forloop.first %}active{% endif %}">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-4">
+											<img
+												src="{{ img.image.url }}"
+												class="d-block w-100"
+												alt="{{ projet.titre }}" />
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#carousel-{{ projet.id }}"
+							data-bs-slide="prev">
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Précédent</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#carousel-{{ projet.id }}"
+							data-bs-slide="next">
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"></span>
+							<span class="visually-hidden">Suivant</span>
+						</button>
+					</div>
+					<div class="col-md-5 mx-5 py-5">
+						<div class="project-langages"></div>
+						<div class="annee"></div>
+						<div class="projets-liens"></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+					Fermer
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

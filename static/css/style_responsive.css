@@ -1,0 +1,81 @@
+@media screen and (max-width: 950px) {
+	#content {
+		max-width: 88vw !important;
+		
+	}
+
+	.logo {
+		width: 45% !important;
+		margin-top: 0.5em !important;
+		margin-right: 1em;
+	}
+	header {
+		height: 48px!important;
+	}
+
+	#burger-menu {
+		margin: 10px !important;
+	}
+	#menu a {
+		display: block;
+		font-size: 3em!important;
+		line-height: 1.4em!important;
+		margin-bottom: 10px!important;
+		text-decoration: none;
+		color: #333!important;
+	  }
+	.blocintro {
+		grid-template-columns: 95% !important;
+	}
+	h1 {
+		font-size: 4em!important;
+		text-shadow: -1px -1px 0 var(--thirdcolor), 1px -1px 0 #ffffffee, -1px 1px 0 #fff, 1px 1px 0 #fff;
+		writing-mode: inherit!important;
+		text-orientation: inherit!important;
+		position: relative!important;
+		left: 0px!important;
+		margin-left: inherit !important;
+		top:0em!important;
+		bottom: 0em !important;
+		padding-bottom: 0.5em !important;
+		padding-top: 0em !important;
+		margin-top: 0px !important;
+		padding-left: 0em !important;
+		padding-right: 0.5em !important;
+		margin-bottom: 0em !important;
+	}
+	h2 {
+		margin-left: 0em !important;
+		font-size: 2em !important;
+		margin-top: 0.1em!important;
+		margin-bottom: 0.4em!important;
+	}
+		
+	.experiencedate {
+	    align-items: baseline!important;
+	}
+	.experiencedate h2 {
+	border-right: none!important;
+	}
+	.blocintro .titleintro h2 {
+		font-size: 2em !important;
+	}
+
+	.blocintro .introtext {
+		padding: 0em 0em 1em 1em !important;
+	}
+
+	p {
+		font-size: 1.2em !important;
+	}
+	.projectbloc {
+
+		grid-template-columns: 95%!important;
+	}
+	.experiencecontainer {
+		grid-template-columns: 95%!important;
+	}
+	#menu.overlay {
+		right: 0px!important;
+	}
+}

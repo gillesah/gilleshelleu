@@ -1,0 +1,727 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
+
+:root {
+	--maincolor: #fff;
+	--secondcolor: #402060;
+	/* #001f4f; */
+	--thirdcolor: #809fff;
+	--backgroundcolor: #000000;
+	--backgroundcolor2: rgb(11, 17, 63);
+	--greycolor: #202020;
+	--mainfont: "Inter", sans-serif;
+	--secondfont: "Syne", sans-serif;
+}
+
+/*-------------------  Header Page  -----------------------*/
+header {
+	height: 90px;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	display: flex;
+	/* background-color: #000; */
+	top: 0;
+	padding-left: 3em !important;
+}
+
+.logo {
+	width: 12%;
+	margin-top: 2em;
+}
+
+.logo img {
+	width: 100%;
+}
+
+/*-------------------  Footer  -----------------------*/
+footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background-color: transparent;
+	color: #e9e9e9;
+}
+
+.copyright {
+	color: #e9e9e9;
+	text-align: center !important;
+	display: block !important;
+	position: relative !important;
+	padding-top: 1em !important;
+	padding-bottom: 1em !important;
+	font-family: var(--mainfont);
+	width: 100% !important;
+}
+
+.copyright a {
+	color: #666 !important;
+}
+
+/*------------------------- HOME Introduction -------------------------------*/
+
+.blocintro {
+	margin-top: 0.3em !important;
+	margin-bottom: 0em !important;
+	padding: 2em !important;
+
+	display: grid;
+	grid-template-columns: 30% 70%;
+}
+
+.blocintro .introtext {
+	padding: 0em 0em 3em 2em;
+}
+.contact-tag {
+	border-radius: 1em !important;
+	background-color: var(--secondcolor) !important;
+}
+.contact-tag:hover {
+	background-color: #fff !important;
+}
+.contact-tag:hover a {
+	color: var(--greycolor) !important;
+}
+.contact-tag a {
+	color: #fff !important;
+	text-decoration: none;
+}
+.contact-tag svg {
+	margin-right: 0.6rem !important;
+	margin-bottom: 0.2em;
+}
+
+/*-------------------  LIENS   -----------------------*/
+.liens li a {
+	box-shadow: 0px 10px 30px rgb(88 164 176 / 30%);
+	z-index: 3;
+	padding: 1rem;
+	padding-left: 2.5rem;
+	margin-left: 1rem;
+	background-color: #ffffff;
+	margin-bottom: 1rem;
+	display: block;
+	text-decoration: none;
+	color: var(--maincolor);
+}
+
+.liens li a:hover {
+	box-shadow: 0px 15px 35px rgb(88 164 176 / 30%);
+	padding: 1.3rem;
+	padding-left: 3.2rem !important;
+}
+
+.liens li a:after {
+	content: "→";
+	margin-left: 2rem !important;
+}
+
+.liens li {
+	list-style-type: none;
+}
+
+/*-------------------  projectbloc  -----------------------*/
+.langages {
+	color: #000 !important;
+}
+.buttonp {
+	font-size: 0.7rem;
+	color: #fff !important;
+	transition: all 0.3s;
+	position: relative;
+	text-decoration: none;
+	padding: 0.4em 0.3em 0.4em 0.3em;
+}
+.modal .buttonp {
+	color: #fff !important;
+	background-color: var(--secondcolor);
+	padding: 0.8em;
+}
+.annee {
+	margin-top: 1.7rem;
+}
+
+.projets-liens {
+	margin-top: 1.7rem;
+}
+.buttonp span {
+	transition: all 0.3s;
+}
+.buttonp::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: rgba(255, 255, 255, 0.5);
+	transform: scale(0.1, 1);
+}
+.buttonp:hover span {
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+.buttonp:hover::before {
+	opacity: 1;
+	transform: scale(1, 1);
+	cursor: pointer;
+}
+.buttonp::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+.buttonp:hover::after {
+	opacity: 0;
+	transform: scale(0.1, 1);
+}
+/* .buttonp {
+  text-decoration: none;
+  /* border-bottom: 1px solid #fff; 
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  position: relative;
+  padding: 10px;
+  margin-left: -1em;
+  margin-bottom: 3em !important;
+} */
+
+/* a.buttonp:before,
+a.buttonp:after {
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-size: 1.3em;
+}
+a.buttonp:before {
+  content: "[";
+}
+a.buttonp:after {
+  content: "]";
+}
+a.buttonp:hover {
+  border-bottom: none !important;
+}
+a.buttonp:hover:before {
+  margin-right: 10px;
+  content: "[";
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+  opacity: 1;
+}
+a.buttonp:hover:after {
+  margin-left: 10px;
+  content: "]";
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+  opacity: 1;
+} */
+
+/* carousel */
+.carousel-inner {
+	height: 300px; /* Fixer la hauteur du carrousel */
+	overflow: hidden; /* Cacher tout débordement */
+}
+.carousel-item img {
+	/* Ces propriétés garantissent que l'image est centrée et couvre l'espace disponible sans dépasser les dimensions du carrousel */
+	max-width: 100%; /* Largeur maximale à 100% de l'élément conteneur */
+	max-height: 300px; /* Hauteur maximale, ajustez selon vos besoins */
+	margin: auto; /* Centrer l'image */
+	display: block; /* Assure que l'image n'est pas en ligne */
+}
+.carousel {
+	height: 100% !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	/* Vous pouvez ajouter des propriétés pour améliorer la visibilité des icônes */
+	filter: invert(100%); /* Exemple pour inverser les couleurs */
+	font-size: 24px; /* Exemple pour ajuster la taille */
+}
+.carousel-inner {
+	height: 300px !important;
+}
+#resetButton {
+	display: none;
+}
+.modal-content {
+	left: 5vw !important;
+	width: 90vw !important;
+	height: 100% !important;
+}
+.modal-dialog {
+	max-width: 100vw !important;
+}
+#techSelect {
+	background-color: var(--greycolor);
+	color: #fff;
+	border: none;
+	border-bottom: 3px solid #fff;
+	padding: 0.4em;
+}
+
+.projectbloc {
+	/* display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto; */
+	background-color: var(--secondcolor);
+	box-shadow: rgba(133, 133, 133, 0.2) 0px 2px 5px 0px; /* box-shadorgba(5, 4, 4, 0.24)24) 0px 4px 9px;       */
+	color: #fff;
+	transition: opacity 0.3s ease;
+	border-radius: 4% !important;
+}
+.projetdescription {
+	font-family: var(--mainfont);
+	padding: 1em 0 1em 0;
+}
+.modal-content {
+	color: #000 !important;
+}
+.modal-content p,
+.modal-content span {
+	color: #000;
+	font-size: 0.8rem;
+	line-height: 0.8rem !important;
+}
+.modal-content .badge {
+	color: #fff;
+}
+.projetdescription h3 {
+	color: #000 !important;
+	line-height: 0.8rem;
+	margin: 0 !important;
+}
+
+.projectbloc h2 {
+	font-size: 1.4em !important;
+	margin-left: 0px !important;
+	color: #fff !important;
+	text-shadow: none !important;
+	margin-top: 1em !important;
+}
+
+.imagebloc {
+	max-width: 100%;
+	padding-right: 0;
+}
+
+.imagebloc img {
+	max-width: 100%;
+}
+
+.projectbutton {
+	display: block;
+	margin-top: 2em !important;
+	color: var(--maincolor) !important;
+}
+
+.projectdate {
+	font-size: 1em !important;
+	line-height: 1.3em !important;
+	color: #666;
+}
+
+.projectdescription {
+	font-size: 1.3em !important;
+	color: #333;
+}
+/* project button */
+[type="button"],
+[type="button"]:focus,
+[type="button"]:hover,
+[type="submit"]:focus,
+[type="submit"]:hover,
+button:focus,
+button:hover {
+	color: inherit !important;
+	background-color: transparent !important;
+	text-decoration: none !important;
+	border: none;
+}
+
+[type="button"]:hover {
+	color: inherit !important;
+	background-color: transparent !important;
+	text-decoration: none !important;
+}
+
+.projectbutton button a {
+	--c: #fff;
+	box-shadow: 0 0 0 0.1em inset var(--c);
+	--_g: linear-gradient(var(--c) 0 0) no-repeat;
+	background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+		var(--_g) calc(200% - var(--_p, 0%)) 0%,
+		var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+		var(--_g) calc(200% - var(--_p, 0%)) 100%;
+	background-size: 53.5% calc(var(--_p, 0%) / 2 + 4%);
+	outline-offset: 0.1em;
+	transition: background-size 0.4s, background-position 0s 0.4s;
+	color: #000 !important;
+	font-size: 1.6em;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: inherit !important;
+	padding: 0.3em 1em 0.3em 1em;
+	position: relative;
+	bottom: 1em !important;
+}
+
+#openBtn:hover,
+button a:hover {
+	--_p: 100%;
+	transition: background-position 0.4s, background-size 0s;
+	color: var(--backgroundcolor2) !important;
+}
+/*-------------------  Button  -----------------------*/
+[type="button"],
+[type="button"]:focus,
+[type="button"]:hover,
+[type="submit"]:focus,
+[type="submit"]:hover,
+button:focus,
+button:hover {
+	color: inherit !important;
+	background-color: transparent !important;
+	text-decoration: none !important;
+	border: none;
+}
+
+[type="button"]:hover {
+	color: inherit !important;
+	background-color: transparent !important;
+	text-decoration: none !important;
+}
+
+#openBtn,
+button a {
+	--c: var(--maincolor);
+	box-shadow: 0 0 0 0.1em inset var(--c);
+	--_g: linear-gradient(var(--c) 0 0) no-repeat;
+	background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+		var(--_g) calc(200% - var(--_p, 0%)) 0%,
+		var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+		var(--_g) calc(200% - var(--_p, 0%)) 100%;
+	background-size: 53.5% calc(var(--_p, 0%) / 2 + 4%);
+	outline-offset: 0.1em;
+	transition: background-size 0.4s, background-position 0s 0.4s;
+	color: #fff;
+	font-size: 1.6em;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: inherit !important;
+	padding: 0.3em 1em 0.3em 1em;
+	position: relative;
+	bottom: 1em !important;
+}
+
+#openBtn:hover,
+button a:hover {
+	--_p: 100%;
+	transition: background-position 0.4s, background-size 0s;
+	color: var(--backgroundcolor2) !important;
+}
+/*-------------------  skills   -----------------------*/
+.skills {
+	text-align: center;
+}
+.skills h2 {
+	text-align: center;
+}
+.skills-item {
+	text-align: center;
+}
+/*-------------------  GENERAL   -----------------------*/
+
+#main {
+	max-width: 70vw;
+	flex: 1;
+	/* min-height: 100vh !important; */
+	padding-top: 0em !important;
+	margin: 0vh 15vw 0 15vw !important;
+	padding-top: 15vh !important;
+	position: relative !important;
+}
+
+body,
+html {
+	height: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	max-width: 100% !important;
+
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	background-color: rgba(0, 0, 0, 1) !important;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+		url("./../images/soulage.jpeg");
+
+	/* background-image: url("./../images/soulage.jpeg"); */
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-attachment: fixed; /* Le fond reste fixe lors du défilement de la page */
+}
+
+body {
+	margin-top: 60px;
+	font: 1em/1.5em var(--mainfont);
+	font-style: normal;
+	font-weight: 400;
+	color: var(--maincolor) !important;
+	word-wrap: break-word;
+	background-color: transparent !important;
+	/* enhance Safari image rendering */
+	image-rendering: optimizeQuality;
+	display: flex; /* Utilise flexbox pour le layout */
+	flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.5em;
+	margin: 0 0 0.4em;
+
+	font-style: normal;
+	font-weight: 300;
+	word-wrap: normal;
+}
+
+h1 {
+	font-size: 8em !important;
+	text-shadow: -1px -1px 0 var(--thirdcolor), 1px -1px 0 #ffffffee,
+		-1px 1px 0 #fff, 1px 1px 0 #fff;
+	color: #000 !important;
+	font-family: var(--secondfont) !important;
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+	position: fixed;
+	margin-left: inherit !important;
+	right: -0.2em;
+	top: 1em;
+	bottom: 0em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	margin-top: 0px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	margin-bottom: 1em;
+}
+
+h2 {
+	font-size: 3em !important;
+	/* -webkit-text-stroke: 2px #FFF; */
+	text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+		1px 1px 0 #fff;
+	color: #000 !important;
+	line-height: 110%;
+	font-family: var(--secondfont) !important;
+	font-style: normal;
+	font-weight: 700 !important;
+	letter-spacing: 0px;
+	margin-left: -2em;
+	margin-top: 1.7em;
+	margin-bottom: 1.7em;
+}
+
+h2 strong {
+	text-shadow: none;
+	color: #fff;
+	font-weight: 700 !important;
+}
+
+h3 {
+	font-size: 1.6em !important;
+	color: #fff !important;
+	line-height: 110%;
+	font-family: var(--mainfont);
+	font-style: normal;
+	font-weight: 400 !important;
+	letter-spacing: 0px;
+}
+
+p {
+	font-family: var(--mainfont) !important;
+	color: var(--maincolor);
+	font-weight: 200;
+	word-wrap: break-word;
+	font-kerning: normal;
+	font-size: 1.6em;
+	line-height: 1.6 !important;
+}
+
+a {
+	color: var(--maincolor) !important;
+}
+
+p a {
+	color: var(--maincolor) !important;
+}
+
+/* ------------------------------------------------------- EXPERIENCE / EDUCATION ------------------------------------------ */
+.experiencecontainer {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	gap: 1em;
+	margin-bottom: 2em;
+}
+
+.experiencedate {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-right: 2em;
+}
+
+.experiencedate h2 {
+	text-align: right;
+	font-size: 2em !important;
+	vertical-align: top;
+	padding-right: 0.8em;
+	border-right: 1px solid #fff;
+	margin-top: 0 !important;
+}
+
+.experiencecontenu p {
+	font-size: 1.1em !important;
+}
+
+.certificatescontainer {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	grid-template-rows: auto;
+	gap: 1em;
+	font-size: 1.3em;
+	margin-bottom: 1em;
+}
+
+.certificatesdate {
+	text-align: right;
+}
+
+/* -------------------------------------------------- FORM --------------------------------------- */
+
+form {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	color: var(--maincolor);
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--maincolor);
+	border-radius: 5px;
+	background-color: black;
+	color: white;
+	margin-bottom: 20px;
+}
+
+input[type="submit"] {
+	--c: var(--maincolor);
+	border-radius: 0px !important;
+	border: none;
+	margin-top: 1em;
+	box-shadow: 0 0 0 0.1em inset var(--c);
+	--_g: linear-gradient(var(--c) 0 0) no-repeat;
+	background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+		var(--_g) calc(200% - var(--_p, 0%)) 0%,
+		var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+		var(--_g) calc(200% - var(--_p, 0%)) 100%;
+	background-size: 53.5% calc(var(--_p, 0%) / 2 + 4%);
+	outline-offset: 0.1em;
+	transition: background-size 0.4s, background-position 0s 0.4s;
+	color: #fff;
+	font-size: 1.6em;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: inherit !important;
+	padding: 0.3em 1em 0.3em 1em;
+	position: relative;
+	bottom: 1em !important;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	--_p: 100%;
+	transition: background-position 0.4s, background-size 0s;
+	color: var(--backgroundcolor2) !important;
+}
+
+/* -------------------------------------------------- FORM --------------------------------------- */
+video {
+	max-height: 50vw !important;
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 999;
+}
+
+.popup-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+#openBtn {
+	font-size: 1.4em !important;
+	cursor: pointer;
+}
+
+.close-btn {
+	position: fixed;
+	top: 0em;
+	right: -3em;
+	width: 2em;
+	height: 2em;
+	border: none;
+	background: transparent;
+	font-size: 3em;
+	cursor: pointer;
+}
+
+.close-btn::before {
+	content: "X";
+	color: var(--maincolor);
+}
