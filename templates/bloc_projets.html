@@ -13,12 +13,23 @@
 <div class="row">
 	{% for projet in projets %}
 	<div
-		class="projectbloc clickable col-12 col-md-3 m-3 p-4"
-		data-langages="{% for langage in projet.langages.all %}{{ langage.nom }}{% if not forloop.last %},{% endif %}{% endfor %}">
-		<img
-			src="{{ projet.image.url }}"
-			alt="{{ projet.titre }}"
-			class="img-fluid" />
+		class="projectbloc clickable col-12 col-md-3 m-3 p-2"
+		data-langages="{% for langage in projet.langages.all %}{{ langage.nom }}{% if not forloop.last %},{% endif %}{% endfor %}"
+		data-bs-toggle="modal"
+		data-bs-target="#projectDetailModal"
+		data-project-id="{{ projet.id }}"
+		data-project-title="{{ projet.titre }}"
+		data-project-description="{{ projet.description }}"
+		data-project-annee="{{ projet.annee }}"
+		data-project-urls="{% for lien in projet.liens.all %}{{ lien.url|safe }}{% if not forloop.last %}|||{% endif %}{% endfor %}"
+		data-project-intitules="{% for lien in projet.liens.all %}{{ lien.intitule|safe }}{% if not forloop.last %}|||{% endif %}{% endfor %}"
+		data-project-images="{% for img in projet.images.all %}{{ img.image.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
+		data-project-liens="{% for lien in projet.liens.all %}{{ lien.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
+		data-project-langages="{% for langage in projet.langages.all %}{{ langage }}{% if not forloop.last %},{% endif %}{% endfor %}">
+		<!-- <img
+				src="{{ projet.image.url }}"
+				alt="{{ projet.titre }}"
+				class="img-fluid" /> -->
 		<h2 class="titreprojet">{{ projet.titre }}</h2>
 		<div class="">
 			{% for langage in projet.langages.all %}
@@ -29,22 +40,7 @@
 		<span class="projetdescription">{{ projet.annee }}</span>
 
 		<div class="projetdescription">{{ projet.soustitre }}</div>
-		<a
-			href="#"
-			class="buttonp"
-			data-bs-toggle="modal"
-			data-bs-target="#projectDetailModal"
-			data-project-id="{{ projet.id }}"
-			data-project-title="{{ projet.titre }}"
-			data-project-description="{{ projet.description }}"
-			data-project-annee="{{ projet.annee }}"
-			data-project-urls="{% for lien in projet.liens.all %}{{ lien.url|safe }}{% if not forloop.last %}|||{% endif %}{% endfor %}"
-			data-project-intitules="{% for lien in projet.liens.all %}{{ lien.intitule|safe }}{% if not forloop.last %}|||{% endif %}{% endfor %}"
-			data-project-images="{% for img in projet.images.all %}{{ img.image.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
-			data-project-liens="{% for lien in projet.liens.all %}{{ lien.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
-			data-project-langages="{% for langage in projet.langages.all %}{{ langage }}{% if not forloop.last %},{% endif %}{% endfor %}"
-			>En savoir +</a
-		>
+		<span class="buttonp">En savoir +</span>
 		<!-- <div class="liens-projet">
       {% for lien in projet.liens.all %}
 

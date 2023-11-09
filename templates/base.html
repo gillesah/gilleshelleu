@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>site internet</title>
+		<title>Gilles Helleu</title>
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/menu.css' %}" />
 		<script
@@ -39,7 +39,7 @@
 				<li><a href="/projets/">Projets</a></li>
 				<li><a href="/experience/">Expérience</a></li>
 				<li><a href="/education/">Formations</a></li>
-				<li><a href="contact.php">Contact</a></li>
+				<li><a href="/contact/">Contact</a></li>
 			</ul>
 		</div>
 	</header>
@@ -67,7 +67,7 @@
 				let projects = document.querySelectorAll(".projectbloc");
 
 				projects.forEach((project) => {
-					let projectLangages = project.dataset.langages.split(","); // Convertir la string "html,css,js" en un tableau ["html", "css", "js"]
+					let projectLangages = project.dataset.langages.split(",");
 					if (langage === null || projectLangages.includes(langage)) {
 						project.style.display = "block";
 					} else {
@@ -75,7 +75,51 @@
 					}
 				});
 			}
+
 			document.addEventListener("DOMContentLoaded", function () {
+				// Gestionnaire pour les cartes cliquables
+				let projectBlocks = document.querySelectorAll(".projectbloc");
+				projectBlocks.forEach((block) => {
+					block.addEventListener("click", function (event) {
+						// Empêche la propagation si un lien ou un bouton est cliqué
+						if (
+							event.target.tagName === "A" ||
+							event.target.tagName === "BUTTON"
+						) {
+							return;
+						}
+
+						// Récupération des données du projet
+						let projectTitle = this.getAttribute("data-project-title");
+						let projectDescription = this.getAttribute(
+							"data-project-description"
+						);
+						let projectUrls =
+							this.getAttribute("data-project-urls").split("|||");
+						let projectIntitules = this.getAttribute(
+							"data-project-intitules"
+						).split("|||");
+						let projectLangages = this.getAttribute(
+							"data-project-langages"
+						).split(",");
+						let projectImages = this.getAttribute("data-project-images").split(
+							","
+						);
+						let projectAnnee = this.getAttribute("data-project-annee");
+
+						// Configuration de la modal avec les données du projet
+						let modal = $("#projectDetailModal");
+						modal.find(".modal-title").text(projectTitle);
+						modal.find(".annee").text(projectAnnee);
+						modal.find(".projetdescription").html(projectDescription);
+						// ... (autres configurations de la modal)
+
+						// Affichage de la modal
+						modal.modal("show");
+					});
+				});
+
+				// Initialisation de la modal pour la première ouverture
 				$("#projectDetailModal").on("show.bs.modal", function (event) {
 					let button = $(event.relatedTarget);
 					let projectTitle = button.data("project-title");
@@ -87,12 +131,9 @@
 					let projectAnnee = button.data("project-annee");
 
 					let modal = $(this);
-
 					modal.find(".modal-title").text(projectTitle);
 					modal.find(".annee").text(projectAnnee);
-
 					modal.find(".projetdescription").html(projectDescription);
-
 					let langagesHtml = projectLangages
 						.map(function (langage) {
 							return `<span class="badge bg-dark">${langage}</span>`;
@@ -125,6 +166,7 @@
 				});
 			});
 		</script>
+
 		<footer>© Gilles Helleu</footer>
 	</body>
 </html>

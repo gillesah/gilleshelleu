@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+
+<form method="post">
+	{% csrf_token %}
+	<label for="id_name">Votre nom:</label>
+	{{ form.name }}
+	<label for="id_email">Votre email:</label>
+	{{ form.email }}
+	<label for="id_message">Votre message:</label>
+	{{ form.message }}
+	<input type="submit" value="Envoyer" />
+</form>
+
+{% endblock %}

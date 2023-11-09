@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.utils.html import mark_safe, escape
-from gh.models import Langage, Projet
+from gh.models import Langage, Projet, ContactForm
 from django.core.serializers import serialize
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def home(request):
@@ -44,3 +46,30 @@ def experience(request):
 
 def education(request):
     return render(request, 'education.html')
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact = form.save()
+
+            # Utilisez le nom des champs corrects de votre modèle/formulaire
+            # Par exemple, si vous souhaitez utiliser le nom comme sujet
+            subject = f"Message de {form.cleaned_data['name']}"
+            message = form.cleaned_data['message']
+            from_email = form.cleaned_data['email']
+
+            # Envoyer un email
+            send_mail(
+                subject,
+                message,
+                from_email,
+                ['helleugilles@gmail.com'],  # Remplacez par votre propre e-mail
+                fail_silently=False,
+            )
+            return render(request, 'contact_success.html')
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
