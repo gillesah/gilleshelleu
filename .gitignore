@@ -24,6 +24,7 @@ media
 *.so
 
 # Distribution / packaging
+gilleshelleu/settings
 .Python
 build/
 develop-eggs/
