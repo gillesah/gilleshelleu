@@ -147,24 +147,34 @@
 					let liensHtml = projectUrls
 						.map(function (url, index) {
 							let intitule = projectIntitules[index];
-							return `<a href="${url}" target="_blank" class="buttonp my-5">${intitule}</a>`;
+							if (url) {
+								return `<a href="${url}" target="_blank" class="buttonp my-5">${intitule}</a>`;
+							}
 						})
 						.join("");
 
 					modal.find(".projets-liens").html(liensHtml);
 
 					// Mettez à jour les images du carrousel
+					let carouselElement = modal.find(".carousel");
 					let carouselInner = modal.find(".carousel-inner");
-					let carouselContent = projectImages
-						.map(
-							(img, index) => `
-				<div class="carousel-item ${index === 0 ? "active" : ""}">
-					<img src="${img}" class="d-block imgcarousel" alt="...">
-				</div>
-			  `
-						)
-						.join("");
-					carouselInner.html(carouselContent);
+
+					// Mettez à jour les images du carrousel
+					if (projectImages.length > 0 && projectImages[0] !== "") {
+						let carouselContent = projectImages
+							.map(
+								(img, index) => `
+                <div class="carousel-item ${index === 0 ? "active" : ""}">
+                    <img src="${img}" class="d-block imgcarousel" alt="...">
+                </div>
+            `
+							)
+							.join("");
+						carouselInner.html(carouselContent);
+						carouselElement.show();
+					} else {
+						carouselElement.hide();
+					}
 				});
 			});
 		</script>
