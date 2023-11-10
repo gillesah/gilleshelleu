@@ -2,7 +2,7 @@
 	#main {
 		max-width: 88vw !important;
 		margin: 0vh 3vw 0 3vw !important;
-		padding-top: 4vh !important;
+		padding-top: 8vh !important;
 	}
 	#content {
 		max-width: 88vw !important;
@@ -12,7 +12,7 @@
 		width: 45% !important;
 		margin-top: 0.5em !important;
 		margin-right: 1em;
-		margin-left: 1em;
+		margin-left: 0.7em;
 	}
 	header {
 		height: 48px !important;

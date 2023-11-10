@@ -35,6 +35,10 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+# zenflow
+ZENFLOW_ROOT = os.path.join(BASE_DIR, 'zenflow')
+
+
 # Application definition
 
 INSTALLED_APPS = [
