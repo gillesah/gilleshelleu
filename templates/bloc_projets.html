@@ -13,7 +13,7 @@
 <div class="row">
 	{% for projet in projets %}
 	<div
-		class="projectbloc clickable col-12 col-md-3 m-3 p-2"
+		class="projectbloc clickable col-11 col-md-3 m-3 p-2"
 		data-langages="{% for langage in projet.langages.all %}{{ langage.nom }}{% if not forloop.last %},{% endif %}{% endfor %}"
 		data-bs-toggle="modal"
 		data-bs-target="#projectDetailModal"
