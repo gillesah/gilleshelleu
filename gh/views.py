@@ -13,7 +13,7 @@ def home(request):
     if langage_filter:
         projets = Projet.objects.filter(langages__nom=langage_filter)
     else:
-        projets = Projet.objects.all()
+        projets = Projet.objects.all().order_by('display_order')
 
     for projet in projets:
         liens = serialize('json', projet.liens.all())
@@ -29,7 +29,7 @@ def liste_projets(request):
     if langage_filter:
         projets = Projet.objects.filter(langages__nom=langage_filter)
     else:
-        projets = Projet.objects.all()
+        projets = Projet.objects.all().order_by('display_order')
     for projet in projets:
         liens = serialize('json', projet.liens.all())
         projet.liens_json = liens

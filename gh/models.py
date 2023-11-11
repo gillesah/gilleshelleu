@@ -15,6 +15,7 @@ class Projet(models.Model):
     soustitre = models.CharField(blank=True, null=True, max_length=255)
     image = models.ImageField(upload_to='projets/')
     annee = models.CharField(blank=True, null=True, max_length=255)
+    display_order = models.IntegerField(default=0)
 
     description = RichTextField(blank=True, null=True)
 
