@@ -30,6 +30,24 @@
 		text-decoration: none;
 		color: #333 !important;
 	}
+	#menu .contact-tag a {
+		color: #fff !important;
+		text-decoration: none;
+		font-size: 1em !important;
+		margin-bottom: 0px !important;
+	}
+	.modal-title {
+		font-size: 2em !important;
+		line-height: 1;
+	}
+
+	.carousel-inner {
+		height: 200px !important;
+	}
+	.modal-content {
+		left: 2vw !important;
+		width: 90vw !important;
+	}
 	.blocintro {
 		grid-template-columns: 95% !important;
 	}
