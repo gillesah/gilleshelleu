@@ -85,3 +85,9 @@
 		right: 0px !important;
 	}
 }
+
+@media screen and (min-width: 950px) and (max-width: 1400px) {
+	.blocintro {
+		grid-template-columns: 40% 70%;
+	}
+}

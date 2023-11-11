@@ -351,8 +351,8 @@ footer {
 .modal-content p,
 .modal-content span {
 	color: #000;
-	font-size: 0.8rem;
-	line-height: 0.8rem !important;
+	font-size: 1.2rem;
+	line-height: 1.4rem !important;
 }
 .modal-content .badge {
 	color: #fff;
