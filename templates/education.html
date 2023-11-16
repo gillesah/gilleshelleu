@@ -41,26 +41,17 @@
         </div>
 
         <h2>Certificats</h2>
-        <div class="certificatescontainer">
-            <div class="certificatesdate">2023</div>
-            <div class="certicatescontenu">OpenClassRooms – Programmation orientée objet avec Python</div>
-            <div class="certificatesdate">2023</div>
-            <div class="certicatescontenu">OpenClassRooms – Git et Github</div>
-            <div class="certificatesdate">2023</div>
-            <div class="certicatescontenu">Créez votre site web avec HTML5 et CSS3</div>
-            <div class="certificatesdate">2023</div>
-            <div class="certicatescontenu">Découvrez le fonctionnement des algorithmes</div>
-            <div class="certificatesdate">2023</div>
-            <div class="certicatescontenu">OpenClassRooms – Python</div>
-            <div class="certificatesdate">2020</div>
-            <div class="certicatescontenu">Formation Proximis</div>
-            <div class="certificatesdate">2019</div>
-            <div class="certicatescontenu">Formation Magento</div>
-            <div class="certificatesdate">2018</div>
-            <div class="certicatescontenu">Qualité web – Opquast</div>
-            <div class="certificatesdate">2018</div>
-            <div class="certicatescontenu">Accessibilité web – Atalan</div>
-        </div>
+<div class="row">
+    {% for certificat in certificats %}
+    <div class="certificatbloc col-5 col-md-4 m-4 p-2">
+
+        <div class="h2">{{ certificat.titre }}</div> 
+        <div class="certificatannee">{{ certificat.annee }}</div>
+        <div class="certificatformateur">{{ certificat.formateur }}</div>
+        
+    </div>        {% endfor %}
+
+</div>
 
 
 {% endblock %}

@@ -26,8 +26,21 @@ class Projet(models.Model):
     def __str__(self):
         return self.titre
 
+# model pour les certificats
+
+
+class Certificat(models.Model):
+    titre = models.CharField(max_length=255)
+    formateur = models.CharField(blank=True, null=True, max_length=255)
+    annee = models.CharField(blank=True, null=True, max_length=255)
+    display_order = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.titre
 
 # des liens pour les projets
+
+
 class Lien(models.Model):
     projet = models.ForeignKey(
         Projet, on_delete=models.CASCADE, related_name="liens")

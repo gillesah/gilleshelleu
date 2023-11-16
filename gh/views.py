@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.utils.html import mark_safe, escape
-from gh.models import Langage, Projet, ContactForm
+from gh.models import Langage, Projet, ContactForm, Certificat
 from django.core.serializers import serialize
 from django.core.mail import send_mail
 from django.conf import settings
@@ -45,7 +45,9 @@ def experience(request):
 
 
 def education(request):
-    return render(request, 'education.html')
+    certificats = Certificat.objects.all().order_by("display_order")
+
+    return render(request, 'education.html', {"certificats": certificats})
 
 
 def contact(request):

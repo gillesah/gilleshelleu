@@ -1,6 +1,14 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import ImageProjet, Projet, Langage, Lien
+from .models import ImageProjet, Projet, Langage, Lien, Certificat
+
+# Les certificats
+
+
+@admin.register(Certificat)
+class CertificatAdmin(admin.ModelAdmin):
+    list_display = ('titre', 'formateur', 'annee', 'display_order')
+    ordering = ('display_order',)
 
 
 class LienInline(admin.StackedInline):
