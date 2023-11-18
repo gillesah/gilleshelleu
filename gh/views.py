@@ -49,15 +49,14 @@ def education(request):
 
     return render(request, 'education.html', {"certificats": certificats})
 
+# Formulaire de contact
+
 
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             contact = form.save()
-
-            # Utilisez le nom des champs corrects de votre modèle/formulaire
-            # Par exemple, si vous souhaitez utiliser le nom comme sujet
             subject = f"Message de {form.cleaned_data['name']}"
             message = form.cleaned_data['message']
             from_email = form.cleaned_data['email']
@@ -67,7 +66,7 @@ def contact(request):
                 subject,
                 message,
                 from_email,
-                ['helleugilles@gmail.com'],  # Remplacez par votre propre e-mail
+                ['helleugilles@gmail.com'],
                 fail_silently=False,
             )
             return render(request, 'contact_success.html')

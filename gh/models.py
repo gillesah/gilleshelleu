@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django import forms
+from friendly_captcha.fields import FrcCaptchaField
 
 
 class Langage(models.Model):
@@ -75,3 +76,4 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ['name', 'email', 'message']
+    captcha = FrcCaptchaField()

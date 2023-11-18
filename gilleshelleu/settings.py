@@ -50,7 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'gh',
+    'friendly_captcha',
+
 ]
+FRC_CAPTCHA_SITE_KEY = "FCMNMRK0LBIHQ6OO"
+FRC_CAPTCHA_SECRET = "A1QTN6EDKNLGFU8E75GTMV6JP5QQKN6HKAHIK263EBSCC19F3AO569AS3U"
+FRC_CAPTCHA_VERIFICATION_URL = 'https://api.friendlycaptcha.com/api/v1/siteverify'
+FRC_CAPTCHA_FAIL_SILENT = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
- 
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
