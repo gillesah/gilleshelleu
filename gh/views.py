@@ -4,6 +4,7 @@ from gh.models import Langage, Projet, ContactForm, Certificat
 from django.core.serializers import serialize
 from django.core.mail import send_mail
 from django.conf import settings
+from decouple import config, Csv
 
 
 def home(request):
@@ -66,7 +67,7 @@ def contact(request):
                 subject,
                 message,
                 from_email,
-                ['helleugilles@gmail.com'],
+                [config('EMAIL_HOST_USER')],
                 fail_silently=False,
             )
             return render(request, 'contact_success.html')
