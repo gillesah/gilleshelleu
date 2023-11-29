@@ -569,7 +569,6 @@ html {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
 		url("./../images/soulage.jpeg");
 
-	/* background-image: url("./../images/soulage.jpeg"); */
 	background-repeat: no-repeat;
 	background-size: cover !important;
 	background-attachment: fixed; /* Le fond reste fixe lors du défilement de la page */
