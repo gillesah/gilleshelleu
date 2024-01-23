@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.utils.html import mark_safe, escape
-from gh.models import Langage, Projet, ContactForm, Certificat
+from .models import Langage, Projet, ContactForm, Certificat
 from django.core.serializers import serialize
 from django.core.mail import send_mail
 from django.conf import settings
