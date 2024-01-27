@@ -26,7 +26,7 @@
 		data-project-images="{% for img in projet.images.all %}{{ img.image.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
 		data-project-liens="{% for lien in projet.liens.all %}{{ lien.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
 		data-project-langages="{% for langage in projet.langages.all %}{{ langage }}{% if not forloop.last %},{% endif %}{% endfor %}">
-		<!-- <img
+		<!-- img<
 				src="{{ projet.image.url }}"
 				alt="{{ projet.titre }}"
 				class="img-fluid" /> -->

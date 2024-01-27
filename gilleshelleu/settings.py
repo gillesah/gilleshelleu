@@ -33,7 +33,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Médias
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CKEDITOR_UPLOAD_PATH = "articles/"
 
 # zenflow
 ZENFLOW_ROOT = os.path.join(BASE_DIR, 'zenflow')
@@ -48,16 +49,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor',
     'gh',
     'friendly_captcha',
+    'ckeditor',
+    'ckeditor_uploader',
 
 ]
 FRC_CAPTCHA_SITE_KEY = "FCMNMRK0LBIHQ6OO"
 FRC_CAPTCHA_SECRET = "A1QTN6EDKNLGFU8E75GTMV6JP5QQKN6HKAHIK263EBSCC19F3AO569AS3U"
 FRC_CAPTCHA_VERIFICATION_URL = 'https://api.friendlycaptcha.com/api/v1/siteverify'
 FRC_CAPTCHA_FAIL_SILENT = True
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['CodeSnippet'],  # Ajoutez cette ligne
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+        'extraPlugins': ','.join([
+            # ... autres plugins ...
+            'codesnippet',  # Ajoutez cette ligne
+        ]),
+    },
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

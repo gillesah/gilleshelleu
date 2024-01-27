@@ -714,6 +714,98 @@ p a {
 	text-align: right;
 }
 
+/* -------------------------------------------- CARDS ARTICLES ---------------------------------------------- */
+.article-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 20px;
+}
+
+.article-card {
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin: 10px;
+	overflow: hidden;
+	width: 300px; /* Adjust as needed */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.article-image {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.article-content {
+	padding: 15px;
+}
+
+.article-title {
+	margin-top: 0;
+	color: #333;
+	font-size: 1.4em !important;
+	margin-left: 0px !important;
+	text-shadow: none !important;
+	margin-top: 1em !important;
+}
+
+.article-description {
+	color: #555;
+	font-size: 0.9em;
+}
+
+.read-more {
+	display: inline-block;
+	font-size: 1em;
+	margin-top: 10px;
+	color: #333;
+	text-decoration: none;
+}
+
+.read-more:hover {
+	text-decoration: underline;
+}
+
+/* ------------------------------- SINGLE POST ----------------------------- */
+.single-post-container {
+	background-color: #000; /* Fond noir */
+	padding: 20px;
+}
+
+.post-content {
+	background-color: #fff; /* Fond blanc pour le contenu */
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 800px; /* Ajustez selon la largeur désirée */
+	margin: auto; /* Centrer le contenu */
+}
+
+.post-title {
+	color: #333;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Ou une autre police de votre choix */
+	font-size: 2em !important; /* Taille du titre */
+	margin-bottom: 20px;
+	text-shadow: none;
+	writing-mode: horizontal-tb;
+	position: relative;
+	right: 0em;
+	top: 0em;
+	bottom: 0em;
+}
+
+.post-description p {
+	color: #333 !important;
+	line-height: 1.6 !important; /* Espacement des lignes pour une meilleure lisibilité */
+	font-size: 1em;
+}
+
 /* -------------------------------------------------- FORM --------------------------------------- */
 
 form {

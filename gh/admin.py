@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import ImageProjet, Projet, Langage, Lien, Certificat
+from .models import ImageProjet, Projet, Langage, Lien, Certificat, Article
 
 # Les certificats
 
@@ -32,6 +32,11 @@ class ProjetAdmin(admin.ModelAdmin):
     def image_tag(self, obj):
         return format_html('<img src="{}" width="50" height="50" />', obj.image.url)
     image_tag.short_description = 'Image'
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ("titre", "description_courte", "image", "description")
 
 
 @admin.register(Langage)

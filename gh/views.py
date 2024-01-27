@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.utils.html import mark_safe, escape
-from .models import Langage, Projet, ContactForm, Certificat
+from .models import Langage, Projet, ContactForm, Certificat, Article
 from django.core.serializers import serialize
 from django.core.mail import send_mail
 from django.conf import settings
@@ -39,6 +39,16 @@ def liste_projets(request):
     langages = Langage.objects.all()
 
     return render(request, 'liste_projets.html', {'projets': projets, 'langages': langages})
+
+
+def list_articles(request):
+    articles = Article.objects.all().order_by("date")
+    return render(request, "blog.html", {"articles": articles})
+
+
+def post_single(request, id):
+    article = get_object_or_404(Article, pk=id)
+    return render(request, "post_single.html", {"article": article})
 
 
 def experience(request):

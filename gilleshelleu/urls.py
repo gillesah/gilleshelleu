@@ -15,22 +15,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from gh import views
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.static import serve
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('projets/', views.liste_projets, name='liste_projets'),
+    path('articles/<int:id>', views.post_single, name='list_articles'),
+    path('articles/', views.list_articles, name='list_articles'),
+
     path('experience/', views.experience, name='experience'),
     path('education/', views.education, name='education'),
     path('contact/', views.contact, name='contact'),
     re_path(r'^zenflow/(?P<path>.*)$', serve,
             {'document_root': settings.ZENFLOW_ROOT}),
+    path("lorem/", TemplateView.as_view(template_name="lorem.html")),
+    re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
 
 ]
