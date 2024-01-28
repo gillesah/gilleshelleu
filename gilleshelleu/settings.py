@@ -62,12 +62,24 @@ FRC_CAPTCHA_FAIL_SILENT = True
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
+        'width': "90vw",
+        'height': 700,
         'toolbar_Custom': [
+            {'name': 'styles', 'items': [
+                'Styles', 'Format', 'Font', 'FontSize']},
             ['Bold', 'Italic', 'Underline'],
             ['CodeSnippet'],  # Ajoutez cette ligne
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
+            ['RemoveFormat', 'Source'],
+            {'name': 'insert',
+             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
+            '/',
+
         ],
+        'bodyClass': 'editor-content',
+        'format_tags': 'p;h1;h2;h3;pre',
         'extraPlugins': ','.join([
             # ... autres plugins ...
             'codesnippet',  # Ajoutez cette ligne

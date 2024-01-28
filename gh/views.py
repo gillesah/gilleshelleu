@@ -42,7 +42,7 @@ def liste_projets(request):
 
 
 def list_articles(request):
-    articles = Article.objects.all().order_by("date")
+    articles = Article.objects.all().order_by("date").filter(visibility="public")
     return render(request, "blog.html", {"articles": articles})
 
 

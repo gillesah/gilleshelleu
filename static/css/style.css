@@ -783,7 +783,7 @@ p a {
 	background-color: #fff; /* Fond blanc pour le contenu */
 	padding: 20px;
 	border-radius: 10px;
-	max-width: 800px;
+	max-width: 90vw;
 	margin: auto; /* Centrer le contenu */
 }
 
@@ -799,6 +799,11 @@ p a {
 	top: 0em;
 	bottom: 0em;
 }
+.single-post-container h2 {
+	font-size: 1em !important;
+	text-shadow: none !important;
+	margin-left: 0 !important;
+}
 
 .post-description p {
 	color: #333 !important;
@@ -810,7 +815,7 @@ p a {
 pre {
 	background-color: #f4f4f4;
 	border: 1px solid #ddd;
-	border-left: 3px solid #f36d33;
+	border-left: 3px solid var(--secondcolor);
 	color: #666;
 	page-break-inside: avoid;
 	font-family: monospace;
@@ -823,7 +828,10 @@ pre {
 	display: block;
 	word-wrap: break-word;
 }
-
+.django-ckeditor-widget {
+	width: 100% !important;
+	background-color: #402060;
+}
 /* -------------------------------------------------- FORM --------------------------------------- */
 
 form {
