@@ -20,9 +20,21 @@ header {
 	position: fixed;
 	z-index: 1;
 	display: flex;
-	/* background-color: #000; */
 	top: 0;
 	padding-left: 3em !important;
+	transition: 0.3s; /* Transition douce */
+}
+
+.sticky {
+	background-color: #000;
+	height: 60px; /* Hauteur réduite */
+}
+
+.sticky .logo {
+	margin-top: 1em; /* Ajustez la marge du logo */
+}
+.sticky #burger-menu {
+	margin: 1em 3em 0 3em;
 }
 
 .logo {

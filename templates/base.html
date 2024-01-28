@@ -47,6 +47,22 @@
 	</header>
 	<body>
 		<main id="main">{% block content %}{% endblock %}</main>
+		<script>
+			window.onscroll = function () {
+				makeSticky();
+			};
+
+			var header = document.querySelector("header");
+			var sticky = header.offsetTop;
+
+			function makeSticky() {
+				if (window.pageYOffset > sticky) {
+					header.classList.add("sticky");
+				} else {
+					header.classList.remove("sticky");
+				}
+			}
+		</script>
 		<script src="{% static 'js/burger.js' %}"></script>
 		<script>
 			document
