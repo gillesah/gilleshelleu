@@ -775,7 +775,7 @@ p a {
 
 .read-more {
 	display: inline-block;
-	font-size: 1em;
+	font-size: 0.8em;
 	margin-top: 10px;
 	color: #333;
 	text-decoration: none;
@@ -803,13 +803,19 @@ p a {
 	color: #333;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Ou une autre police de votre choix */
 	font-size: 2em !important; /* Taille du titre */
-	margin-bottom: 20px;
 	text-shadow: none;
 	writing-mode: horizontal-tb;
 	position: relative;
 	right: 0em;
 	top: 0em;
 	bottom: 0em;
+	margin-bottom: 0px !important;
+	padding-bottom: 0px !important;
+	padding-left: 0px !important;
+}
+.post-date {
+	color: var(--secondcolor) !important;
+	font-size: 1em !important;
 }
 .single-post-container h2 {
 	font-size: 1em !important;
@@ -822,7 +828,15 @@ p a {
 	line-height: 1.6 !important; /* Espacement des lignes pour une meilleure lisibilité */
 	font-size: 1em;
 }
-
+/* tags */
+.bg-article {
+	background-color: var(--secondcolor) !important;
+	color: #fff !important;
+	font-weight: 300 !important;
+}
+.tagsarticles {
+	margin-bottom: 1em !important;
+}
 /* extraits de code */
 pre {
 	background-color: #f4f4f4;

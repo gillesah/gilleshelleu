@@ -36,7 +36,12 @@ class ProjetAdmin(admin.ModelAdmin):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ("titre", "description_courte", "image", "description")
+    list_display = ("titre",  "description_courte",
+                    "image", "description", "display_langages")
+
+    def display_langages(self, obj):
+        return ", ".join([langage.nom for langage in obj.langage.all()])
+    display_langages.short_description = 'Langages'
 
 
 @admin.register(Langage)

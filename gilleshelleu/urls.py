@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('projets/', views.liste_projets, name='liste_projets'),
-    path('articles/<int:id>', views.post_single, name='list_articles'),
+    path('articles/<slug:slug>/', views.post_single, name='list_articles'),
     path('articles/', views.list_articles, name='list_articles'),
 
     path('experience/', views.experience, name='experience'),

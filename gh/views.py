@@ -42,12 +42,12 @@ def liste_projets(request):
 
 
 def list_articles(request):
-    articles = Article.objects.all().order_by("date").filter(visibility="public")
+    articles = Article.objects.all().order_by("-date").filter(visibility="public")
     return render(request, "blog.html", {"articles": articles})
 
 
-def post_single(request, id):
-    article = get_object_or_404(Article, pk=id)
+def post_single(request, slug):
+    article = get_object_or_404(Article, slug=slug)
     return render(request, "post_single.html", {"article": article})
 
 
