@@ -809,7 +809,7 @@ p a {
 	right: 0em;
 	top: 0em;
 	bottom: 0em;
-	margin-bottom: 0px !important;
+	margin-bottom: 1em !important;
 	padding-bottom: 0px !important;
 	padding-left: 0px !important;
 }
