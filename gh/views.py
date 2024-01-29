@@ -20,9 +20,10 @@ def home(request):
         liens = serialize('json', projet.liens.all())
         projet.liens_json = liens
         projet.description = mark_safe(projet.description)
-    langages = Langage.objects.all()
+        langages = Langage.objects.all()
+        articles = Article.objects.all().order_by("-date").filter(visibility="public")
 
-    return render(request, 'home.html', {'projets': projets, 'langages': langages})
+    return render(request, 'home.html', {'projets': projets, 'langages': langages, "articles": articles})
 
 
 def liste_projets(request):

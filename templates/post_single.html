@@ -1,4 +1,9 @@
 {% extends "base.html" %} {% block content %}
+<div class="breadcrumb">
+	<a href="{% url 'home' %}">Accueil </a> &gt;
+	<a href="{% url 'list_articles' %}"> Articles </a> &gt;
+	<span> {{ article.titre }}</span>
+</div>
 <div class="single-post-container">
 	<div class="post-content">
 		<h1 class="post-title">{{ article.titre }}</h1>

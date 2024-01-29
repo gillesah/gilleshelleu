@@ -1,21 +1,2 @@
-{% extends "base.html" %} {% block content %}
-<div class="article-container">
-	{% for article in articles %}
-	<a href="/articles/{{ article.slug }}"
-		><div class="article-card">
-			<div class="article-content">
-				<h2 class="article-title">{{ article.titre }}</h2>
-				<div class="tagsarticles">
-					{% for l in article.langage.all %}
-					<span class="langages badge bg-article">{{ l }}</span>
-					{% endfor %}
-				</div>
-
-				<p class="article-description">{{ article.description_courte }}</p>
-				<p class="read-more">Lire la suite...</p>
-			</div>
-		</div></a
-	>
-	{% endfor %}
-</div>
+{% extends "base.html" %} {% block content %} {% include "bloc_articles.html" %}
 {% endblock %}
