@@ -1,4 +1,7 @@
 @media screen and (max-width: 950px) {
+	.sticky .header-contact {
+		display: none;
+	}
 	#main {
 		max-width: 88vw !important;
 		margin: 0vh 3vw 0 3vw !important;
@@ -107,5 +110,8 @@
 @media screen and (min-width: 950px) and (max-width: 1400px) {
 	.blocintro {
 		grid-template-columns: 40% 70%;
+	}
+	.sticky .header-contact {
+		display: none;
 	}
 }

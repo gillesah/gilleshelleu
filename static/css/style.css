@@ -25,6 +25,30 @@ header {
 	transition: 0.3s; /* Transition douce */
 }
 
+.header-contact {
+	display: none;
+	position: absolute;
+	right: 7vw; /* Ajustez cette valeur en fonction de la position du menu burger */
+	top: 10px; /* Ajustez en fonction de la hauteur du header */
+}
+
+.sticky .header-contact {
+	display: flex;
+	align-items: center;
+}
+
+.header-contact .contact-tag {
+	font-size: 0.8rem; /* Réduit la taille du texte dans les boutons */
+	padding: 5px 10px; /* Réduit le padding pour rendre les boutons plus petits */
+	margin: 0 5px; /* Espacement entre les boutons */
+	background-color: #000 !important;
+}
+
+.header-contact .contact-tag svg {
+	height: 14px; /* Réduit la taille des icônes */
+	width: 14px;
+}
+
 .sticky {
 	background-color: #000;
 	height: 60px; /* Hauteur réduite */
