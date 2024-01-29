@@ -13,6 +13,24 @@
 			{% endfor %}
 		</p>
 		<div class="post-description">{{ article.description|safe }}</div>
+		<div class="article-navigation">
+			{% if prev_article %}
+			<div class="nav-card">
+				<a href="/articles/{{ prev_article.slug }}">
+					<span class="nav-arrow">&larr;</span>
+					<span class="nav-title">{{ prev_article.titre }}</span>
+				</a>
+			</div>
+			{% endif %} {% if next_article %}
+			<div class="nav-card">
+				<a href="/articles/{{ next_article.slug }}">
+					<span class="nav-title">{{ next_article.titre }}</span>
+					<span class="nav-arrow">&rarr;</span>
+				</a>
+			</div>
+			{% endif %}
+		</div>
 	</div>
 </div>
+
 {% endblock %}

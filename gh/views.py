@@ -49,7 +49,15 @@ def list_articles(request):
 
 def post_single(request, slug):
     article = get_object_or_404(Article, slug=slug)
-    return render(request, "post_single.html", {"article": article})
+    prev_article = Article.objects.filter(
+        date__lt=article.date).order_by('-date').first()
+    next_article = Article.objects.filter(
+        date__gt=article.date).order_by('date').first()
+    return render(request, 'post_single.html', {
+        'article': article,
+        'prev_article': prev_article,
+        'next_article': next_article
+    })
 
 
 def experience(request):
