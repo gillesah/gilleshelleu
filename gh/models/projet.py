@@ -15,6 +15,7 @@ class Projet(models.Model):
     description = RichTextField(blank=True, null=True)
 
     langages = models.ManyToManyField(Langage)
+    top = models.BooleanField(default=False)
 
     # liens = models.JSONField(blank=True, null=True)
 

@@ -406,6 +406,17 @@ footer {
 	text-shadow: none !important;
 	margin-top: 1em !important;
 }
+.badge-small {
+	font-size: 0.5em !important;
+	font-weight: 300 !important;
+}
+.projectbloc .titreprojet-small {
+	font-size: 1em !important;
+	margin-left: 0px !important;
+	color: #fff !important;
+	text-shadow: none !important;
+	margin-top: 0.5em !important;
+}
 
 .imagebloc {
 	max-width: 100%;

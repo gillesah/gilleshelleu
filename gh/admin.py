@@ -24,7 +24,7 @@ class ImageProjetInline(admin.StackedInline):
 @admin.register(Projet)
 class ProjetAdmin(admin.ModelAdmin):
     list_display = ('titre', 'soustitre', 'display_order',
-                    'description', 'annee')
+                    'description', 'annee', "top")
     list_filter = ('langages',)
     ordering = ('display_order',)
     inlines = [LienInline, ImageProjetInline]
