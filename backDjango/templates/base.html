@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gilles Helleu</title>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style_responsive.css' %}" />
+
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+		<script src="{% static 'js/bootstrap.bundle.min.js' %} " defer></script>
+		<script src="{% static 'js/popup.js' %}" defer></script>
+	</head>
+
+	<link
+		rel="icon"
+		type="image/png"
+		href=" {% static 'images/favicon.png' %} " />
+
+	<header class="page-header">
+		<div class="logo">
+			<a href="/"
+				><img
+					src="{% static 'images/logoGHblc.png' %}"
+					alt="Logo Gilles Helleu"
+			/></a>
+		</div>
+		<div class="header-contact">{% include "contact_boutons.html" %}</div>
+		<div id="burger-menu">
+			<span></span>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="/projets/">Projets</a></li>
+				<li><a href="/experience/">Expérience</a></li>
+				<li><a href="/education/">Formations</a></li>
+				<li><a href="/articles/">mémos</a></li>
+				<li><a href="/contact/">Contact</a></li>
+			</ul>
+			<div class="buttonsmenu">{% include "contact_boutons.html" %}</div>
+		</div>
+	</header>
+	<body>
+		<main id="main">{% block content %}{% endblock %}</main>
+		<script>
+			window.onscroll = function () {
+				makeSticky();
+			};
+
+			var header = document.querySelector("header");
+			var sticky = header.offsetTop;
+
+			function makeSticky() {
+				if (window.pageYOffset > sticky) {
+					header.classList.add("sticky");
+				} else {
+					header.classList.remove("sticky");
+				}
+			}
+		</script>
+		<script src="{% static 'js/burger.js' %}"></script>
+		<script>
+			document
+				.getElementById("techSelect")
+				.addEventListener("change", function () {
+					let selectedValue = this.value;
+
+					// Si "Technologies" est sélectionné, affichez tous les projets
+					if (selectedValue === "./") {
+						displayProjectsByLangage(null);
+					} else {
+						let langageToFilter = new URLSearchParams(selectedValue).get(
+							"langage"
+						);
+						displayProjectsByLangage(langageToFilter);
+					}
+				});
+
+			function displayProjectsByLangage(langage) {
+				let projects = document.querySelectorAll(".projectbloc");
+
+				projects.forEach((project) => {
+					let projectLangages = project.dataset.langages.split(",");
+					if (langage === null || projectLangages.includes(langage)) {
+						project.style.display = "block";
+					} else {
+						project.style.display = "none";
+					}
+				});
+			}
+
+			document.addEventListener("DOMContentLoaded", function () {
+				// Gestionnaire pour les cartes cliquables
+				let projectBlocks = document.querySelectorAll(".projectbloc");
+				projectBlocks.forEach((block) => {
+					block.addEventListener("click", function (event) {
+						// Empêche la propagation si un lien ou un bouton est cliqué
+						if (
+							event.target.tagName === "A" ||
+							event.target.tagName === "BUTTON"
+						) {
+							return;
+						}
+
+						// Récupération des données du projet
+						let projectTitle = this.getAttribute("data-project-title");
+						let projectDescription = this.getAttribute(
+							"data-project-description"
+						);
+						let projectUrls =
+							this.getAttribute("data-project-urls").split("|||");
+						let projectIntitules = this.getAttribute(
+							"data-project-intitules"
+						).split("|||");
+						let projectLangages = this.getAttribute(
+							"data-project-langages"
+						).split(",");
+						let projectImages = this.getAttribute("data-project-images").split(
+							","
+						);
+						let projectAnnee = this.getAttribute("data-project-annee");
+
+						// Configuration de la modal avec les données du projet
+						let modal = $("#projectDetailModal");
+						modal.find(".modal-title").text(projectTitle);
+						modal.find(".annee").text(projectAnnee);
+						modal.find(".projetdescription").html(projectDescription);
+						// ... (autres configurations de la modal)
+
+						// Affichage de la modal
+						modal.modal("show");
+					});
+				});
+
+				// Initialisation de la modal pour la première ouverture
+				$("#projectDetailModal").on("show.bs.modal", function (event) {
+					let button = $(event.relatedTarget);
+					let projectTitle = button.data("project-title");
+					let projectDescription = button.data("project-description");
+					let projectUrls = button.data("project-urls").split("|||");
+					let projectIntitules = button.data("project-intitules").split("|||");
+					let projectLangages = button.data("project-langages").split(",");
+					let projectImages = button.data("project-images").split(",");
+					let projectAnnee = button.data("project-annee");
+
+					let modal = $(this);
+					modal.find(".modal-title").text(projectTitle);
+					modal.find(".annee").text(projectAnnee);
+					modal.find(".projetdescription").html(projectDescription);
+					let langagesHtml = projectLangages
+						.map(function (langage) {
+							return `<span class="badge bg-dark">${langage}</span>`;
+						})
+						.join(" ");
+
+					modal.find(".project-langages").html(langagesHtml);
+
+					let liensHtml = projectUrls
+						.map(function (url, index) {
+							let intitule = projectIntitules[index];
+							if (url) {
+								return `<a href="${url}" target="_blank" class="buttonp my-5">${intitule}</a>`;
+							}
+						})
+						.join("");
+
+					modal.find(".projets-liens").html(liensHtml);
+
+					// Mettez à jour les images du carrousel
+					let carouselElement = modal.find(".carousel");
+					let carouselInner = modal.find(".carousel-inner");
+
+					// Mettez à jour les images du carrousel
+					if (projectImages.length > 0 && projectImages[0] !== "") {
+						let carouselContent = projectImages
+							.map(
+								(img, index) => `
+                <div class="carousel-item ${index === 0 ? "active" : ""}">
+                    <img src="${img}" class="d-block imgcarousel" alt="...">
+                </div>
+            `
+							)
+							.join("");
+						carouselInner.html(carouselContent);
+						carouselElement.show();
+					} else {
+						carouselElement.hide();
+					}
+				});
+			});
+		</script>
+
+		<footer>© Gilles Helleu</footer>
+	</body>
+</html>

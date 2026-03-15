@@ -1,0 +1,199 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="filtres">
+	<select id="techSelect">
+		<option value="./">Toutes les technologies</option>
+		{% for langage in langages %}
+		<option value="?langage={{ langage }}">{{ langage }}</option>
+		{% endfor %}
+	</select>
+	<button id="resetButton" onclick="window.location.href='./'">
+		Réinitialiser
+	</button>
+</div>
+
+<div class="row">
+	{% for projet in projets %}
+	<div
+		class="projectbloc col-12 col-md-3 m-3 p-4"
+		data-langages="{% for langage in projet.langages.all %}{{ langage.nom }}{% if not forloop.last %},{% endif %}{% endfor %}">
+		<img
+			src="{{ projet.image.url }}"
+			alt="{{ projet.titre }}"
+			class="img-fluid" />
+		<h2 class="titreprojet">{{ projet.titre }}</h2>
+		<div class="">
+			{% for langage in projet.langages.all %}
+			<span class="langages badge bg-light">{{ langage }}</span>
+
+			{% endfor %}
+		</div>
+		<span class="projetdescription">{{ projet.annee }}</span>
+
+		<div class="projetdescription">{{ projet.soustitre }}</div>
+		<a
+			href="#"
+			class="buttonp"
+			data-bs-toggle="modal"
+			data-bs-target="#projectDetailModal"
+			data-project-id="{{ projet.id }}"
+			data-project-title="{{ projet.titre }}"
+			data-project-description="{{ projet.description }}"
+			data-project-liens="{{ projet.liens.all }}"
+			data-project-images="{% for img in projet.images.all %}{{ img.image.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
+			data-project-liens="{% for lien in projet.liens.all %}{{ lien.url }}{% if not forloop.last %},{% endif %}{% endfor %}"
+			data-bs-target="#projectDetailModal-{{ projet.id }}"
+			>En savoir +</a
+		>
+		<!-- <div class="liens-projet">
+      {% for lien in projet.liens.all %}
+
+      <a href="{{ lien.url }}" target="_blank" class="buttonp"
+        >{{ lien.intitule }}
+      </a>
+    
+
+      {% endfor %}
+    </div> -->
+	</div>
+	{% endfor %}
+</div>
+
+<!-- MODALE POUR CHAQUE PROJET -->
+
+<div
+	class="modal fade"
+	id="projectDetailModal"
+	tabindex="-1"
+	aria-labelledby="projectDetailModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="projectDetailModalLabel">
+					{{ projet.titre }}
+				</h5>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="modal"
+					aria-label="Fermer"></button>
+			</div>
+			<div class="modal-body">
+				<h2 class="titreprojet"></h2>
+				<div class="liens-projet">
+					{% for lien in projet.liens.all %}
+
+					<a href="{{ lien.url }}" target="_blank" class="buttonp"
+						>{{ lien.intitule }}
+					</a>
+
+					{% endfor %}
+				</div>
+				<div class="projetdescription">{{ projet.description }}</div>
+
+				<div id="carousel-{{ projet.id }}" class="carousel slide">
+					<div class="carousel-inner">
+						{% for img in projet.images.all %}
+						<div class="carousel-item {% if forloop.first %}active{% endif %}">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4">
+										<img
+											src="{{ img.image.url }}"
+											class="d-block w-100"
+											alt="{{ projet.titre }}" />
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<button
+						class="carousel-control-prev"
+						type="button"
+						data-bs-target="#carousel-{{ projet.id }}"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Précédent</span>
+					</button>
+					<button
+						class="carousel-control-next"
+						type="button"
+						data-bs-target="#carousel-{{ projet.id }}"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Suivant</span>
+					</button>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+					Fermer
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.getElementById("techSelect").addEventListener("change", function () {
+		let selectedValue = this.value;
+
+		// Si "Technologies" est sélectionné, affichez tous les projets
+		if (selectedValue === "./") {
+			displayProjectsByLangage(null);
+		} else {
+			let langageToFilter = new URLSearchParams(selectedValue).get("langage");
+			displayProjectsByLangage(langageToFilter);
+		}
+	});
+
+	function displayProjectsByLangage(langage) {
+		let projects = document.querySelectorAll(".projectbloc");
+
+		projects.forEach((project) => {
+			let projectLangages = project.dataset.langages.split(","); // Convertir la string "html,css,js" en un tableau ["html", "css", "js"]
+			if (langage === null || projectLangages.includes(langage)) {
+				project.style.display = "block";
+			} else {
+				project.style.display = "none";
+			}
+		});
+	}
+	document.addEventListener("DOMContentLoaded", function () {
+		$("#projectDetailModal").on("show.bs.modal", function (event) {
+			let button = $(event.relatedTarget);
+			let projectTitle = button.data("project-title");
+			let projectDescription = button.data("project-description");
+			let projectLiens = button.data("project-liens").split(",");
+			let projectImages = button.data("project-images").split(",");
+			let modal = $(this);
+
+			modal.find(".modal-title").text(projectTitle);
+			modal.find(".projetdescription").html(projectDescription);
+
+			let liensHtml = projectLiens
+				.map(
+					(lien) =>
+						`<a href="${lien}" target="_blank" class="buttonp">INTITULE LIEN</a>`
+				)
+				.join("");
+			modal.find(".modal-footer").html(liensHtml);
+
+			// Mettez à jour les images du carrousel
+			let carouselInner = modal.find(".carousel-inner");
+			let carouselContent = projectImages
+				.map(
+					(img, index) => `
+        <div class="carousel-item ${index === 0 ? "active" : ""}">
+            <img src="${img}" class="d-block imgcarousel" alt="...">
+        </div>
+      `
+				)
+				.join("");
+			carouselInner.html(carouselContent);
+		});
+	});
+</script>
+{% endblock %}

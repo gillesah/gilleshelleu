@@ -52,3 +52,6 @@ docker build -t back .
 
 docker run -p 8080:8080 back
 ```
+
+## Démarrer le projet docker 
+``` docker-compose up --build```
