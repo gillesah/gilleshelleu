@@ -38,9 +38,9 @@ nav {
 }
 
 .nav-logo {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -76,7 +76,7 @@ nav {
 }
 
 .hero h1 {
-  font-size: clamp(4rem, 10vw, 9rem);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.9;
@@ -437,10 +437,11 @@ nav.menu-open .burger span:nth-child(3) {
 .timeline-year {
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   color: var(--accent);
-  min-width: 48px;
+  min-width: 72px;
   padding-top: 2px;
+  white-space: nowrap;
 }
 
 .timeline-content {
@@ -458,6 +459,58 @@ nav.menu-open .burger span:nth-child(3) {
 .timeline-content span {
   font-size: 0.8rem;
   color: var(--gray);
+}
+
+/* ─── CONTACT FORM ──────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+  flex-shrink: 0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--gray-dark);
+  border: 1.5px solid var(--gray-mid);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 16px 20px;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-success {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.form-error {
+  font-size: 0.85rem;
+  color: #ff4444;
+}
+
+.contact-form .btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ─── RESPONSIVE ────────────────────────────────────────── */

@@ -44,7 +44,7 @@
         <span class="marquee-item">·</span>
         <span class="marquee-item">Gulliver</span>
         <span class="marquee-item">·</span>
-        <span class="marquee-item">Le Livre</span>
+        <span class="marquee-item">L'Entrepreneur Augmenté</span>
         <span class="marquee-item">·</span>
         <span class="marquee-item">IA pour Entrepreneurs</span>
         <span class="marquee-item">·</span>
@@ -54,7 +54,7 @@
         <span class="marquee-item">·</span>
         <span class="marquee-item">Gulliver</span>
         <span class="marquee-item">·</span>
-        <span class="marquee-item">Le Livre</span>
+        <span class="marquee-item">L'Entrepreneur Augmenté</span>
         <span class="marquee-item">·</span>
         <span class="marquee-item">IA pour Entrepreneurs</span>
         <span class="marquee-item">·</span>
@@ -88,8 +88,8 @@
         </div>
         <div class="project-card">
           <span class="project-tag">En cours · 2026</span>
-          <h3>Le Livre</h3>
-          <p>Comment les entrepreneurs peuvent multiplier leur productivité avec l'IA — les outils, les méthodes, les pièges à éviter. Tout ce que j'ai appris en construisant mes projets.</p>
+          <h3>L'Entrepreneur Augmenté</h3>
+          <p>Comment les entrepreneurs multiplient leur productivité avec l'IA — les outils, les méthodes, les pièges à éviter. Tout ce que j'ai appris en construisant mes projets.</p>
           <span class="project-link">Bientôt</span>
         </div>
       </div>
@@ -111,62 +111,59 @@
           </p>
           <p>
             J'ai fondé <strong>G.A.H. Management</strong> à Paris — une agence de management
-            artistique avec 25 artistes. Ma première vraie école de l'entrepreneuriat :
-            vente, gestion, communication, tout en même temps.
+            artistique avec 25 artistes. Puis managé une équipe de 8 personnes
+            à la Direction de la Communication du <strong>Conseil Départemental de Haute-Garonne</strong>.
           </p>
           <p>
-            Au <strong>Conseil Départemental de Haute-Garonne</strong>, j'ai managé
-            une équipe de 8 personnes à la Direction de la Communication.
-            C'est là que j'ai compris la différence entre une bonne idée et une idée qui scale.
+            En 2021, pivot total vers le développement. Passé par
+            <strong>Eurecia</strong> comme ingénieur logiciel (ERP RH SaaS, Kotlin + Vue 3),
+            avant de fonder <strong>Le Meon</strong> — ma structure sous laquelle
+            je construis FluenzR, BskyGrowth et mes projets IA.
           </p>
           <p>
-            En 2021, pivot total vers le développement.
             En 2023, j'aurais mis 2 ans à lancer FluenzR.
             <strong>L'IA m'en a pris 6 mois.</strong>
             Depuis, je construis différemment — et j'aide d'autres entrepreneurs à faire pareil.
+          </p>
+          <p>
+            <strong>Formation :</strong> Master Administration · Paris-Sorbonne (2009),
+            Master Communication & Management · CELSA Paris (2018).
           </p>
         </div>
         <div class="timeline">
           <div class="timeline-item">
             <span class="timeline-year">2026</span>
             <div class="timeline-content">
-              <strong>Le Livre</strong>
-              <span>L'IA pour les entrepreneurs — en cours d'écriture</span>
+              <strong>L'Entrepreneur Augmenté</strong>
+              <span>Livre en cours — multiplier sa productivité avec l'IA</span>
             </div>
           </div>
           <div class="timeline-item">
             <span class="timeline-year">2023</span>
             <div class="timeline-content">
-              <strong>FluenzR & BskyGrowth</strong>
-              <span>Fondateur — SaaS construits avec l'IA</span>
+              <strong>Le Meon · FluenzR & BskyGrowth</strong>
+              <span>Fondateur · SaaS Email IA + Growth Bluesky, construits avec l'IA</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2022</span>
+            <div class="timeline-content">
+              <strong>Eurecia</strong>
+              <span>Ingénieur logiciel · ERP RH SaaS · Kotlin, Spring, Vue 3</span>
             </div>
           </div>
           <div class="timeline-item">
             <span class="timeline-year">2021</span>
             <div class="timeline-content">
               <strong>Pivot développeur</strong>
-              <span>Le Meon — freelance dev, Python, Kotlin</span>
+              <span>Le Meon · formation autodidacte · Python, Kotlin, Vue 3</span>
             </div>
           </div>
           <div class="timeline-item">
-            <span class="timeline-year">2016</span>
+            <span class="timeline-year">2005–2021</span>
             <div class="timeline-content">
-              <strong>Master CELSA</strong>
-              <span>Management de la Communication, Paris</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-year">2008</span>
-            <div class="timeline-content">
-              <strong>Responsable Communication</strong>
-              <span>Conseil Dép. Haute-Garonne · Pôle Média · 8 personnes</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-year">2005</span>
-            <div class="timeline-content">
-              <strong>G.A.H. Management</strong>
-              <span>Fondateur & Gérant · Agence artistique · 25 artistes · Paris</span>
+              <strong>15 ans Communication Digitale</strong>
+              <span>G.A.H. Management (agence artistique, 25 artistes) · Conseil Dép. Haute-Garonne (Pôle Média, 8 personnes) · Linkfluence, Inconito</span>
             </div>
           </div>
         </div>
@@ -174,13 +171,25 @@
     </section>
 
     <!-- Contact -->
-    <div class="contact-section">
+    <div id="contact" class="contact-section">
       <div class="contact-inner">
         <h2 class="contact-title">Vous voulez intégrer<br>l'IA dans<br>votre business ?</h2>
-        <div class="hero-cta">
-          <a href="mailto:gilles@fluenzr.co" class="btn-primary">Me contacter</a>
-          <a href="https://www.linkedin.com/in/gilleshelleu" target="_blank" class="btn-secondary">LinkedIn</a>
-        </div>
+        <form class="contact-form" @submit.prevent="submitForm">
+          <div class="form-group">
+            <input type="text" v-model="form.name" placeholder="Votre nom" required />
+          </div>
+          <div class="form-group">
+            <input type="email" v-model="form.email" placeholder="Votre email" required />
+          </div>
+          <div class="form-group">
+            <textarea v-model="form.message" placeholder="Votre message" rows="4" required></textarea>
+          </div>
+          <p v-if="formStatus === 'success'" class="form-success">Message envoyé — je vous réponds sous 48h.</p>
+          <p v-if="formStatus === 'error'" class="form-error">Une erreur s'est produite. Écrivez-moi à gilles@fluenzr.co</p>
+          <button type="submit" class="btn-primary" :disabled="formStatus === 'sending'">
+            {{ formStatus === 'sending' ? 'Envoi...' : 'Envoyer' }}
+          </button>
+        </form>
       </div>
     </div>
 
@@ -195,6 +204,28 @@
 
 <script setup lang="ts">
 const menuOpen = ref(false)
+
+const form = ref({ name: '', email: '', message: '' })
+const formStatus = ref<'' | 'sending' | 'success' | 'error'>('')
+
+async function submitForm() {
+  formStatus.value = 'sending'
+  try {
+    const res = await fetch('https://formspree.io/f/VOTRE_FORMSPREE_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(form.value),
+    })
+    if (res.ok) {
+      formStatus.value = 'success'
+      form.value = { name: '', email: '', message: '' }
+    } else {
+      formStatus.value = 'error'
+    }
+  } catch {
+    formStatus.value = 'error'
+  }
+}
 
 useSeoMeta({
   title: 'Gilles Helleu — Entrepreneur, IA & Fondateur de FluenzR',
