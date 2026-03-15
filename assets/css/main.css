@@ -4,7 +4,7 @@
 :root {
   --black: #000000;
   --white: #ffffff;
-  --accent: #dbff00;
+  --accent: #00d1ff;
   --gray: #888888;
   --gray-dark: #1a1a1a;
   --gray-mid: #333333;
@@ -173,7 +173,7 @@ nav {
 /* ─── PROJETS ───────────────────────────────────────────── */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2px;
   background: var(--gray-mid);
 }
@@ -345,6 +345,120 @@ footer p {
 
 footer a { color: var(--gray); }
 footer a:hover { color: var(--white); }
+
+/* ─── BURGER ────────────────────────────────────────────── */
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 200;
+}
+
+.burger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+nav.menu-open .burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+nav.menu-open .burger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+nav.menu-open .burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── MENU OVERLAY ──────────────────────────────────────── */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-overlay ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.menu-overlay ul li a {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.2s;
+}
+
+.menu-overlay ul li a:hover {
+  color: var(--accent);
+}
+
+/* ─── TIMELINE ──────────────────────────────────────────── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--gray-mid);
+}
+
+.timeline-item {
+  background: var(--black);
+  padding: 28px 32px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.timeline-year {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  min-width: 48px;
+  padding-top: 2px;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-content strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.timeline-content span {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
 
 /* ─── RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 900px) {
