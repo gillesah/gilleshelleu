@@ -211,7 +211,7 @@ const formStatus = ref<'' | 'sending' | 'success' | 'error'>('')
 async function submitForm() {
   formStatus.value = 'sending'
   try {
-    const res = await fetch('https://formspree.io/f/VOTRE_FORMSPREE_ID', {
+    const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(form.value),
