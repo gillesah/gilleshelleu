@@ -96,7 +96,7 @@
           <p>
             Aujourd'hui je dirige <strong>Le Meon</strong>, ma structure sous laquelle je construis
             FluenzR, BskyGrowth et mes projets IA. J'aurais mis 2 ans à lancer FluenzR.
-            <strong>L'IA m'en a pris 6 mois.</strong>
+            <strong>L'IA m'en a pris 2 mois.</strong>
           </p>
           <p>
             J'aide les entrepreneurs et chefs d'entreprise à faire pareil.
@@ -112,7 +112,7 @@
             <span class="fact-label">Années d'expérience business</span>
           </div>
           <div class="fact-item">
-            <span class="fact-number">6</span>
+            <span class="fact-number">2</span>
             <span class="fact-label">Mois pour construire FluenzR</span>
           </div>
           <div class="fact-item">
