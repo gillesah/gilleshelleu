@@ -149,7 +149,7 @@
     <!-- Footer -->
     <footer>
       <p>© 2026 Gilles Helleu</p>
-      <p><a href="https://fluenzr.co">FluenzR</a> · <a href="mailto:gilles@fluenzr.co">gilles@fluenzr.co</a></p>
+      <p><a href="mailto:gilles@fluenzr.co">gilles@fluenzr.co</a></p>
     </footer>
 
   </div>
