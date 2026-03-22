@@ -280,31 +280,60 @@ nav {
 
 /* ─── MARQUEE ───────────────────────────────────────────── */
 .marquee-section {
-  padding: 40px 0;
-  overflow: hidden;
+  padding: 6px 0;
   background: var(--accent);
   border-bottom: 1px solid var(--gray-mid);
 }
 
-.marquee-track {
+/* ─── BOOK CARD ────────────────────────────────────────── */
+.book-card-content {
   display: flex;
-  gap: 80px;
-  white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  gap: 24px;
+  align-items: flex-start;
+  flex: 1;
 }
 
-.marquee-item {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--black);
+.book-cover-img {
+  width: 100px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+.book-card-content p {
+  flex: 1;
+}
+
+/* ─── ABOUT FACTS ──────────────────────────────────────── */
+.about-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--gray-mid);
+}
+
+.fact-item {
+  background: var(--black);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fact-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.fact-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray);
+  letter-spacing: 0.05em;
 }
 
 /* ─── CONTACT ───────────────────────────────────────────── */

@@ -3,7 +3,7 @@
 
     <!-- Nav -->
     <nav :class="{ 'menu-open': menuOpen }">
-      <a href="/" class="nav-logo">GILLESHELLEU</a>
+      <a href="/" class="nav-logo">GILLES HELLEU</a>
       <button class="burger" @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -36,30 +36,7 @@
     </section>
 
     <!-- Marquee -->
-    <div class="marquee-section" aria-hidden="true">
-      <div class="marquee-track">
-        <span class="marquee-item">FluenzR</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">BskyGrowth</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">Gulliver</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">L'Entrepreneur Augmenté</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">IA pour Entrepreneurs</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">FluenzR</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">BskyGrowth</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">Gulliver</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">L'Entrepreneur Augmenté</span>
-        <span class="marquee-item">·</span>
-        <span class="marquee-item">IA pour Entrepreneurs</span>
-        <span class="marquee-item">·</span>
-      </div>
-    </div>
+    <div class="marquee-section" aria-hidden="true"></div>
 
     <!-- Projets -->
     <section id="projects" class="section">
@@ -80,17 +57,20 @@
           <p>Mon premier SaaS. Outils de growth pour Bluesky — le réseau social décentralisé en plein essor. Croître une audience, automatiser l'engagement.</p>
           <span class="project-link">bskygrowth.com</span>
         </a>
-        <div class="project-card">
-          <span class="project-tag">Agent IA · Automatisation</span>
+        <a href="https://github.com/gillesah/openNoClaw" target="_blank" class="project-card">
+          <span class="project-tag">Agent IA · Open Source</span>
           <h3>Gulliver</h3>
-          <p>Mon robot IA personnel en production 24h/24. Il publie sur LinkedIn, trie mes emails, prospecte sur Apollo et gère mes crons. Je dors, il travaille.</p>
-          <span class="project-link">En production</span>
-        </div>
+          <p>Mon robot IA personnel en production 24h/24. Il publie sur LinkedIn, trie mes emails, prospecte sur Apollo et gère mes crons. Construit sur openNoClaw, mon projet open source.</p>
+          <span class="project-link">github.com/gillesah/openNoClaw</span>
+        </a>
         <div class="project-card">
-          <span class="project-tag">En cours · 2026</span>
-          <h3>L'Entrepreneur Augmenté</h3>
-          <p>Comment les entrepreneurs multiplient leur productivité avec l'IA — les outils, les méthodes, les pièges à éviter. Tout ce que j'ai appris en construisant mes projets.</p>
-          <span class="project-link">Bientôt</span>
+          <span class="project-tag">Livre · Éditions Envol</span>
+          <h3>Mon meilleur employé est une IA</h3>
+          <div class="book-card-content">
+            <img :src="bookCoverSrc" alt="Couverture du livre" class="book-cover-img" />
+            <p>Décuplez le potentiel de votre entreprise avec les agents IA autonomes.</p>
+          </div>
+          <span class="project-link">Bientôt disponible</span>
         </div>
       </div>
     </section>
@@ -98,73 +78,46 @@
     <!-- About -->
     <section id="about" class="section">
       <div class="section-header">
-        <span class="section-number">02 — Mon parcours</span>
-        <h2 class="section-title">15 ans de terrain<br>avant l'IA</h2>
+        <span class="section-number">02 — Qui je suis</span>
+        <h2 class="section-title">Ingénieur,<br>fondateur,<br>terrain.</h2>
       </div>
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Avant de coder des SaaS et de construire des agents IA, j'ai passé
-            <strong>15 ans dans la communication digitale.</strong>
-            Chef de projet, consultant UX, responsable d'équipes — j'ai appris
-            à comprendre les vrais problèmes des organisations avant d'en construire les solutions.
+            Je suis <strong>ingénieur logiciel</strong> et <strong>fondateur</strong>.
+            Je code, je construis des SaaS, je déploie des agents IA en production.
+            Pas en théorie — tous les jours, dans mes propres projets.
           </p>
           <p>
-            J'ai fondé <strong>G.A.H. Management</strong> à Paris — une agence de management
-            artistique avec 25 artistes. Puis managé une équipe de 8 personnes
-            à la Direction de la Communication du <strong>Conseil Départemental de Haute-Garonne</strong>.
+            Avant ça, <strong>20 ans dans le business</strong> : fondateur d'une agence à Paris,
+            management d'équipes, communication digitale.
+            Je connais les vrais problèmes des entrepreneurs parce que je les ai vécus.
           </p>
           <p>
-            En 2021, pivot total vers le développement. Passé par
-            <strong>Eurecia</strong> comme ingénieur logiciel (ERP RH SaaS, Kotlin + Vue 3),
-            avant de fonder <strong>Le Meon</strong> — ma structure sous laquelle
-            je construis FluenzR, BskyGrowth et mes projets IA.
-          </p>
-          <p>
-            En 2023, j'aurais mis 2 ans à lancer FluenzR.
+            Aujourd'hui je dirige <strong>Le Meon</strong>, ma structure sous laquelle je construis
+            FluenzR, BskyGrowth et mes projets IA. J'aurais mis 2 ans à lancer FluenzR.
             <strong>L'IA m'en a pris 6 mois.</strong>
-            Depuis, je construis différemment — et j'aide d'autres entrepreneurs à faire pareil.
           </p>
           <p>
-            <strong>Formation :</strong> Master Administration · Paris-Sorbonne (2009),
-            Master Communication & Management · CELSA Paris (2018).
+            J'aide les entrepreneurs et chefs d'entreprise à faire pareil.
           </p>
         </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-year">2026</span>
-            <div class="timeline-content">
-              <strong>L'Entrepreneur Augmenté</strong>
-              <span>Livre en cours — multiplier sa productivité avec l'IA</span>
-            </div>
+        <div class="about-facts">
+          <div class="fact-item">
+            <span class="fact-number">3</span>
+            <span class="fact-label">SaaS lancés avec l'IA</span>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-year">2023</span>
-            <div class="timeline-content">
-              <strong>Le Meon · FluenzR & BskyGrowth</strong>
-              <span>Fondateur · SaaS Email IA + Growth Bluesky, construits avec l'IA</span>
-            </div>
+          <div class="fact-item">
+            <span class="fact-number">20+</span>
+            <span class="fact-label">Années d'expérience business</span>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-year">2022</span>
-            <div class="timeline-content">
-              <strong>Eurecia</strong>
-              <span>Ingénieur logiciel · ERP RH SaaS · Kotlin, Spring, Vue 3</span>
-            </div>
+          <div class="fact-item">
+            <span class="fact-number">6</span>
+            <span class="fact-label">Mois pour construire FluenzR</span>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-year">2021</span>
-            <div class="timeline-content">
-              <strong>Pivot développeur</strong>
-              <span>Le Meon · formation autodidacte · Python, Kotlin, Vue 3</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-year">2005–2021</span>
-            <div class="timeline-content">
-              <strong>15 ans Communication Digitale</strong>
-              <span>G.A.H. Management (agence artistique, 25 artistes) · Conseil Dép. Haute-Garonne (Pôle Média, 8 personnes) · Linkfluence, Inconito</span>
-            </div>
+          <div class="fact-item">
+            <span class="fact-number">24/7</span>
+            <span class="fact-label">Gulliver, mon agent IA en production</span>
           </div>
         </div>
       </div>
@@ -204,6 +157,7 @@
 
 <script setup lang="ts">
 const menuOpen = ref(false)
+const bookCoverSrc = '/images/livre-cover.jpg'
 
 const form = ref({ name: '', email: '', message: '' })
 const formStatus = ref<'' | 'sending' | 'success' | 'error'>('')
