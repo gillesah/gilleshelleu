@@ -63,15 +63,15 @@
           <p>Mon robot IA personnel en production 24h/24. Il publie sur LinkedIn, trie mes emails, prospecte sur Apollo et gère mes crons. Construit sur openNoClaw, mon projet open source.</p>
           <span class="project-link">github.com/gillesah/openNoClaw</span>
         </a>
-        <div class="project-card">
+        <a href="https://amzn.eu/d/0cnclRgz" target="_blank" rel="noopener" class="project-card">
           <span class="project-tag">Livre · Éditions Envol</span>
           <h3>Mon meilleur employé est une IA</h3>
           <div class="book-card-content">
             <img :src="bookCoverSrc" alt="Couverture du livre" class="book-cover-img" />
             <p>Décuplez le potentiel de votre entreprise avec les agents IA autonomes.</p>
           </div>
-          <span class="project-link">Bientôt disponible</span>
-        </div>
+          <span class="project-link">Disponible sur Amazon →</span>
+        </a>
       </div>
     </section>
 
@@ -182,7 +182,7 @@ async function submitForm() {
 
 useSeoMeta({
   title: 'Gilles Helleu — Entrepreneur, IA & Fondateur de FluenzR',
-  description: 'L\'IA libère votre temps. Je vous montre comment. Fondateur de FluenzR et BskyGrowth, auteur en cours.',
+  description: 'L\'IA libère votre temps. Je vous montre comment. Fondateur de FluenzR et BskyGrowth, auteur de "Mon meilleur employé est une IA".',
   ogTitle: 'Gilles Helleu — L\'IA libère votre temps.',
   ogDescription: 'Des outils concrets, des workflows réels. Ce que j\'applique moi-même dans mes projets.',
 })
