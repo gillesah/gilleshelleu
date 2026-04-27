@@ -45,6 +45,17 @@
         <h2 class="section-title">Projets</h2>
       </div>
       <div class="projects-grid">
+        <a href="https://amzn.eu/d/0cnclRgz" target="_blank" rel="noopener" class="project-card project-card--featured">
+          <div class="book-featured-cover">
+            <img :src="bookCoverSrc" alt="Couverture du livre" class="book-cover-img" />
+          </div>
+          <div class="book-featured-text">
+            <span class="project-tag">Livre · Éditions Envol</span>
+            <h3>Mon meilleur employé est une IA</h3>
+            <p>Décuplez le potentiel de votre entreprise avec les agents IA autonomes. Ce que j'applique tous les jours dans mes propres projets — FluenzR construit en 2 mois, Gulliver en production 24h/24.</p>
+            <span class="project-link">Disponible sur Amazon →</span>
+          </div>
+        </a>
         <a href="https://fluenzr.co" target="_blank" class="project-card">
           <span class="project-tag">SaaS · Email · IA</span>
           <h3>FluenzR</h3>
@@ -68,15 +79,6 @@
           <h3>Gulliver</h3>
           <p>Mon robot IA personnel en production 24h/24. Il publie sur LinkedIn, trie mes emails, prospecte sur Apollo et gère mes crons. Construit sur openNoClaw, mon projet open source.</p>
           <span class="project-link">github.com/gillesah/openNoClaw</span>
-        </a>
-        <a href="https://amzn.eu/d/0cnclRgz" target="_blank" rel="noopener" class="project-card">
-          <span class="project-tag">Livre · Éditions Envol</span>
-          <h3>Mon meilleur employé est une IA</h3>
-          <div class="book-card-content">
-            <img :src="bookCoverSrc" alt="Couverture du livre" class="book-cover-img" />
-            <p>Décuplez le potentiel de votre entreprise avec les agents IA autonomes.</p>
-          </div>
-          <span class="project-link">Disponible sur Amazon →</span>
         </a>
       </div>
     </section>

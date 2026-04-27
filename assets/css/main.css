@@ -285,23 +285,30 @@ nav {
   border-bottom: 1px solid var(--gray-mid);
 }
 
-/* ─── BOOK CARD ────────────────────────────────────────── */
-.book-card-content {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  flex: 1;
+/* ─── BOOK CARD FEATURED ───────────────────────────────── */
+.project-card--featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+  min-height: 240px;
 }
 
-.book-cover-img {
-  width: 100px;
-  height: auto;
-  border-radius: 2px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+.book-featured-cover {
   flex-shrink: 0;
 }
 
-.book-card-content p {
+.book-cover-img {
+  width: 130px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.book-featured-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   flex: 1;
 }
 
@@ -551,6 +558,7 @@ nav.menu-open .burger span:nth-child(3) {
   .section { padding: 80px 24px; }
   .section-header { flex-direction: column; gap: 16px; }
   .projects-grid { grid-template-columns: 1fr; }
+  .project-card--featured { flex-direction: column; gap: 24px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .contact-inner { flex-direction: column; align-items: flex-start; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
