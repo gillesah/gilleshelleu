@@ -51,6 +51,12 @@
           <p>Email marketing B2B augmenté par l'IA. Séquences automatiques, prospection intelligente, délivrabilité optimisée. L'outil que j'aurais voulu avoir avant de le créer.</p>
           <span class="project-link">fluenzr.co</span>
         </a>
+        <a href="https://forgr.co" target="_blank" class="project-card">
+          <span class="project-tag">SaaS · SEO · IA</span>
+          <h3>ForgR</h3>
+          <p>Constellation de blogs SEO thématiques générés par l'IA. Occupe plus de place sur Google, multiplie les chances d'être cité par ChatGPT, Perplexity ou Claude.</p>
+          <span class="project-link">forgr.co</span>
+        </a>
         <a href="https://bskygrowth.com" target="_blank" class="project-card">
           <span class="project-tag">SaaS · Réseau social · Growth</span>
           <h3>BskyGrowth</h3>
