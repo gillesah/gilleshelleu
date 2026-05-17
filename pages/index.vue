@@ -29,7 +29,7 @@
           <br>Pas de théorie — ce que j'applique moi-même dans mes projets.
         </p>
         <div class="hero-cta">
-          <a href="https://app.fluenzr.co" target="_blank" class="btn-primary">Essayer FluenzR</a>
+          <a href="https://forgr.co" target="_blank" class="btn-primary">Essayer ForgR</a>
           <a href="#projects" class="btn-secondary">Voir ce que je construis</a>
         </div>
       </div>
