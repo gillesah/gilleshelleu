@@ -15,7 +15,7 @@
         <li><a href="#projects" @click="menuOpen = false">Projets</a></li>
         <li><a href="#about" @click="menuOpen = false">Parcours</a></li>
         <li><a href="#contact" @click="menuOpen = false">Contact</a></li>
-        <li><a href="https://app.fluenzr.co" target="_blank" @click="menuOpen = false">FluenzR →</a></li>
+        <li><a href="https://forgr.co" target="_blank" @click="menuOpen = false">ForgR →</a></li>
       </ul>
     </div>
 
@@ -56,17 +56,17 @@
             <span class="project-link">Disponible sur Amazon →</span>
           </div>
         </a>
-        <a href="https://fluenzr.co" target="_blank" class="project-card">
-          <span class="project-tag">SaaS · Email · IA</span>
-          <h3>FluenzR</h3>
-          <p>Email marketing B2B augmenté par l'IA. Séquences automatiques, prospection intelligente, délivrabilité optimisée. L'outil que j'aurais voulu avoir avant de le créer.</p>
-          <span class="project-link">fluenzr.co</span>
-        </a>
         <a href="https://forgr.co" target="_blank" class="project-card">
           <span class="project-tag">SaaS · SEO · IA</span>
           <h3>ForgR</h3>
           <p>Constellation de blogs SEO thématiques générés par l'IA. Occupe plus de place sur Google, multiplie les chances d'être cité par ChatGPT, Perplexity ou Claude.</p>
           <span class="project-link">forgr.co</span>
+        </a>
+        <a href="https://fluenzr.co" target="_blank" class="project-card">
+          <span class="project-tag">SaaS · Email · IA</span>
+          <h3>FluenzR</h3>
+          <p>Email marketing B2B augmenté par l'IA. Séquences automatiques, prospection intelligente, délivrabilité optimisée. L'outil que j'aurais voulu avoir avant de le créer.</p>
+          <span class="project-link">fluenzr.co</span>
         </a>
         <a href="https://bskygrowth.com" target="_blank" class="project-card">
           <span class="project-tag">SaaS · Réseau social · Growth</span>
@@ -103,8 +103,8 @@
           </p>
           <p>
             Aujourd'hui je dirige <strong>Le Meon</strong>, ma structure sous laquelle je construis
-            FluenzR, BskyGrowth et mes projets IA. J'aurais mis 2 ans à lancer FluenzR.
-            <strong>L'IA m'en a pris 2 mois.</strong>
+            <strong>ForgR</strong>, FluenzR, BskyGrowth et mes projets IA. ForgR, ma dernière création,
+            j'aurais mis des mois à le lancer. <strong>L'IA m'en a pris quelques semaines.</strong>
           </p>
           <p>
             J'aide les entrepreneurs et chefs d'entreprise à faire pareil.
@@ -189,8 +189,8 @@ async function submitForm() {
 }
 
 useSeoMeta({
-  title: 'Gilles Helleu — Entrepreneur, IA & Fondateur de FluenzR',
-  description: 'L\'IA libère votre temps. Je vous montre comment. Fondateur de FluenzR et BskyGrowth, auteur de "Mon meilleur employé est une IA".',
+  title: 'Gilles Helleu — Entrepreneur, IA & Fondateur de ForgR',
+  description: 'L\'IA libère votre temps. Je vous montre comment. Fondateur de ForgR et FluenzR, auteur de "Mon meilleur employé est une IA".',
   ogTitle: 'Gilles Helleu — L\'IA libère votre temps.',
   ogDescription: 'Des outils concrets, des workflows réels. Ce que j\'applique moi-même dans mes projets.',
 })
