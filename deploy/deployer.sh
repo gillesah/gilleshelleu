@@ -133,7 +133,7 @@ docker ps --filter name=gilleshelleu --format "{{.Names}}: {{.Status}}"
 
 # Purge des vieilles releases (on garde les 5 dernières + celle en cours).
 cd html/releases
-ls -1 | sort | head -n -5 | grep -v "^${RELEASE}\$" | xargs -r rm -rf --
+{ ls -1 | sort | head -n -5 | grep -v "^${RELEASE}\$" || true; } | xargs -r rm -rf --
 DISTANT
 
 # --- Contrôle final -----------------------------------------------------------
