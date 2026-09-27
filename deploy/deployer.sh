@@ -46,7 +46,9 @@ log() { echo "[$(date -Iseconds)] $*"; }
 # --- Gates locaux -----------------------------------------------------------
 
 [ "$(git rev-parse --abbrev-ref HEAD)" = main ] || { echo "Déployer depuis main."; exit 1; }
-[ -z "$(git status --porcelain)" ] || { echo "Arbre de travail non propre."; exit 1; }
+# -uno : on ignore les fichiers non suivis (dist/, images de brouillon…) — seuls les
+# fichiers SUIVIS modifiés ou en attente d'ajout bloquent le déploiement.
+[ -z "$(git status --porcelain -uno)" ] || { echo "Arbre de travail non propre (fichiers suivis modifiés)."; exit 1; }
 git fetch -q origin main
 COMMIT=$(git rev-parse HEAD)
 [ "$COMMIT" = "$(git rev-parse origin/main)" ] || { echo "main local et origin/main diffèrent : pousse d'abord."; exit 1; }
