@@ -79,19 +79,16 @@
             <NuxtLink to="/projets/fluenzr" class="project-link-secondary">Détails techniques →</NuxtLink>
           </div>
         </div>
-        <a href="https://bskygrowth.com" target="_blank" class="project-card">
-          <span class="project-tag">SaaS · Réseau social · Growth</span>
-          <h3>BskyGrowth</h3>
-          <p>Mon premier SaaS. Outils de growth pour Bluesky — le réseau social décentralisé en plein essor. Croître une audience, automatiser l'engagement.</p>
-          <span class="project-link">bskygrowth.com</span>
-        </a>
         <div class="project-card">
-          <span class="project-tag">Agent IA · Open Source</span>
-          <h3>Gulliver</h3>
-          <p>Mon robot IA personnel en production 24h/24. Il publie sur LinkedIn, trie mes emails, prospecte sur Apollo et gère mes crons. Construit sur openNoClaw, mon projet open source.</p>
+          <div class="project-card-header">
+            <span class="project-tag">SaaS · Crédit d'impôt recherche · IA</span>
+            <span class="project-status">En cours</span>
+          </div>
+          <h3>CIICIR</h3>
+          <p>Construit, tout au long de l'année, le dossier justificatif du Crédit d'Impôt Recherche et du Crédit d'Impôt Innovation à partir des traces réelles de travail, puis génère la demande de rescrit fiscal.</p>
           <div class="project-card-links">
-            <a href="https://github.com/gillesah/openNoClaw" target="_blank" rel="noopener" class="project-link">github.com/gillesah/openNoClaw</a>
-            <NuxtLink to="/projets/gulliver" class="project-link-secondary">Détails techniques →</NuxtLink>
+            <a href="https://ciicir.fr" target="_blank" rel="noopener" class="project-link">ciicir.fr</a>
+            <NuxtLink to="/projets/ciicir" class="project-link-secondary">Détails techniques →</NuxtLink>
           </div>
         </div>
         <div class="project-card">
@@ -106,16 +103,19 @@
             <NuxtLink to="/projets/timalio" class="project-link-secondary">Détails techniques →</NuxtLink>
           </div>
         </div>
+        <a href="https://bskygrowth.com" target="_blank" class="project-card">
+          <span class="project-tag">SaaS · Réseau social · Growth</span>
+          <h3>BskyGrowth</h3>
+          <p>Mon premier SaaS. Outils de growth pour Bluesky — le réseau social décentralisé en plein essor. Croître une audience, automatiser l'engagement.</p>
+          <span class="project-link">bskygrowth.com</span>
+        </a>
         <div class="project-card">
-          <div class="project-card-header">
-            <span class="project-tag">SaaS · Crédit d'impôt recherche · IA</span>
-            <span class="project-status">En cours</span>
-          </div>
-          <h3>CIICIR</h3>
-          <p>Construit, tout au long de l'année, le dossier justificatif du Crédit d'Impôt Recherche et du Crédit d'Impôt Innovation à partir des traces réelles de travail, puis génère la demande de rescrit fiscal.</p>
+          <span class="project-tag">Agent IA · Open Source</span>
+          <h3>Gulliver</h3>
+          <p>Mon robot IA personnel en production 24h/24. Il publie sur LinkedIn, trie mes emails, prospecte sur Apollo et gère mes crons. Construit sur openNoClaw, mon projet open source.</p>
           <div class="project-card-links">
-            <a href="https://ciicir.fr" target="_blank" rel="noopener" class="project-link">ciicir.fr</a>
-            <NuxtLink to="/projets/ciicir" class="project-link-secondary">Détails techniques →</NuxtLink>
+            <a href="https://github.com/gillesah/openNoClaw" target="_blank" rel="noopener" class="project-link">github.com/gillesah/openNoClaw</a>
+            <NuxtLink to="/projets/gulliver" class="project-link-secondary">Détails techniques →</NuxtLink>
           </div>
         </div>
       </div>
