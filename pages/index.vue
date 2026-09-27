@@ -14,6 +14,8 @@
       <ul>
         <li><a href="#projects" @click="menuOpen = false">Projets</a></li>
         <li><a href="#about" @click="menuOpen = false">Parcours</a></li>
+        <li><NuxtLink to="/methode" @click="menuOpen = false">Méthode</NuxtLink></li>
+        <li><NuxtLink to="/cv" @click="menuOpen = false">CV</NuxtLink></li>
         <li><a href="#contact" @click="menuOpen = false">Contact</a></li>
         <li><a href="https://forgr.co" target="_blank" @click="menuOpen = false">ForgR →</a></li>
       </ul>
@@ -31,6 +33,8 @@
         <div class="hero-cta">
           <a href="https://forgr.co" target="_blank" class="btn-primary">Essayer ForgR</a>
           <a href="#projects" class="btn-secondary">Voir ce que je construis</a>
+          <NuxtLink to="/cv" class="btn-secondary">CV</NuxtLink>
+          <NuxtLink to="/methode" class="btn-secondary">Méthode</NuxtLink>
         </div>
       </div>
     </section>
@@ -56,30 +60,39 @@
             <span class="project-link">Disponible sur Amazon →</span>
           </div>
         </a>
-        <a href="https://forgr.co" target="_blank" class="project-card">
+        <div class="project-card">
           <span class="project-tag">SaaS · SEO · IA</span>
           <h3>ForgR</h3>
           <p>Constellation de blogs SEO thématiques générés par l'IA. Occupe plus de place sur Google, multiplie les chances d'être cité par ChatGPT, Perplexity ou Claude.</p>
-          <span class="project-link">forgr.co</span>
-        </a>
-        <a href="https://fluenzr.co" target="_blank" class="project-card">
+          <div class="project-card-links">
+            <a href="https://forgr.co" target="_blank" rel="noopener" class="project-link">forgr.co</a>
+            <NuxtLink to="/projets/forgr" class="project-link-secondary">Détails techniques →</NuxtLink>
+          </div>
+        </div>
+        <div class="project-card">
           <span class="project-tag">SaaS · Email · IA</span>
           <h3>FluenzR</h3>
           <p>Email marketing B2B augmenté par l'IA. Séquences automatiques, prospection intelligente, délivrabilité optimisée. L'outil que j'aurais voulu avoir avant de le créer.</p>
-          <span class="project-link">fluenzr.co</span>
-        </a>
+          <div class="project-card-links">
+            <a href="https://fluenzr.co" target="_blank" rel="noopener" class="project-link">fluenzr.co</a>
+            <NuxtLink to="/projets/fluenzr" class="project-link-secondary">Détails techniques →</NuxtLink>
+          </div>
+        </div>
         <a href="https://bskygrowth.com" target="_blank" class="project-card">
           <span class="project-tag">SaaS · Réseau social · Growth</span>
           <h3>BskyGrowth</h3>
           <p>Mon premier SaaS. Outils de growth pour Bluesky — le réseau social décentralisé en plein essor. Croître une audience, automatiser l'engagement.</p>
           <span class="project-link">bskygrowth.com</span>
         </a>
-        <a href="https://github.com/gillesah/openNoClaw" target="_blank" class="project-card">
+        <div class="project-card">
           <span class="project-tag">Agent IA · Open Source</span>
           <h3>Gulliver</h3>
           <p>Mon robot IA personnel en production 24h/24. Il publie sur LinkedIn, trie mes emails, prospecte sur Apollo et gère mes crons. Construit sur openNoClaw, mon projet open source.</p>
-          <span class="project-link">github.com/gillesah/openNoClaw</span>
-        </a>
+          <div class="project-card-links">
+            <a href="https://github.com/gillesah/openNoClaw" target="_blank" rel="noopener" class="project-link">github.com/gillesah/openNoClaw</a>
+            <NuxtLink to="/projets/gulliver" class="project-link-secondary">Détails techniques →</NuxtLink>
+          </div>
+        </div>
       </div>
     </section>
 
