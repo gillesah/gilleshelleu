@@ -2,6 +2,7 @@
   <div>
 
     <!-- Nav -->
+    <div class="nav-scrim" aria-hidden="true"></div>
     <nav :class="{ 'menu-open': menuOpen }">
       <a href="/" class="nav-logo">GILLES HELLEU</a>
       <button class="burger" @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" aria-label="Menu">
@@ -91,6 +92,30 @@
           <div class="project-card-links">
             <a href="https://github.com/gillesah/openNoClaw" target="_blank" rel="noopener" class="project-link">github.com/gillesah/openNoClaw</a>
             <NuxtLink to="/projets/gulliver" class="project-link-secondary">Détails techniques →</NuxtLink>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-tag">SaaS · Réseaux sociaux · IA</span>
+            <span class="project-status">En cours</span>
+          </div>
+          <h3>Timalio</h3>
+          <p>Programmation de publications sur plusieurs réseaux sociaux, avec un circuit de validation avant mise en ligne — pensé aussi pour qu'un agent IA planifie lui-même des posts via une API.</p>
+          <div class="project-card-links">
+            <a href="https://timalio.com" target="_blank" rel="noopener" class="project-link">timalio.com</a>
+            <NuxtLink to="/projets/timalio" class="project-link-secondary">Détails techniques →</NuxtLink>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-tag">SaaS · Crédit d'impôt recherche · IA</span>
+            <span class="project-status">En cours</span>
+          </div>
+          <h3>CIICIR</h3>
+          <p>Construit, tout au long de l'année, le dossier justificatif du Crédit d'Impôt Recherche et du Crédit d'Impôt Innovation à partir des traces réelles de travail, puis génère la demande de rescrit fiscal.</p>
+          <div class="project-card-links">
+            <a href="https://ciicir.fr" target="_blank" rel="noopener" class="project-link">ciicir.fr</a>
+            <NuxtLink to="/projets/ciicir" class="project-link-secondary">Détails techniques →</NuxtLink>
           </div>
         </div>
       </div>
