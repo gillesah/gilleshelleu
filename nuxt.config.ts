@@ -46,5 +46,16 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'static',
+    prerender: {
+      routes: [
+        '/methode',
+        '/cv',
+        '/projets/forgr',
+        '/projets/fluenzr',
+        '/projets/ciicir',
+        '/projets/timalio',
+        '/projets/gulliver',
+      ],
+    },
   },
 })
