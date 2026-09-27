@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# ANCIEN script de déploiement, gardé comme FILET pendant que le conteneur web de
+# lemeon2 tourne encore (7 jours après la bascule vers Cloudflare Pages, voir
+# CLAUDE.md — date d'arrêt à vérifier là-bas). Le site en production est déployé
+# par deploy/deployer.sh (Cloudflare Pages) ; celui-ci ne déploie plus QUE lemeon2,
+# utile pour redéployer l'API contact (conteneur `api`, resté sur lemeon2 derrière
+# api.gilleshelleu.com) ou pour un retour arrière si Pages a un problème bloquant.
+#
 # Déploie gilleshelleu.com sur lemeon2, lancé à la main depuis le poste : plus de
 # GitHub Actions (incident de facturation GitHub du 21/09/2026, qui bloque tous les
 # workflows sans rien signaler — voir ~/ghdev/CLAUDE.md, section « Déploiement »).

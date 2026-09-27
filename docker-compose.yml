@@ -14,3 +14,8 @@ services:
       context: api
     restart: unless-stopped
     env_file: .env
+    ports:
+      # Le site est passé sur Cloudflare Pages (autre origine) : l'API contact
+      # reste sur lemeon2, exposée en local seulement, derrière le nginx hôte
+      # qui termine le TLS sur api.gilleshelleu.com (voir CLAUDE.md).
+      - "127.0.0.1:3001:3001"
