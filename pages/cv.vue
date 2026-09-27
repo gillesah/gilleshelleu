@@ -26,7 +26,6 @@
         Toulouse · télétravail · gilleshelleu.com · github.com/gillesah
       </p>
       <div class="cv-actions">
-        <a href="/cv/CV-Gilles-Helleu-2026.pdf" download class="btn-primary">Télécharger le CV (PDF) →</a>
         <a href="/#contact" class="btn-secondary">Me contacter</a>
       </div>
     </section>
@@ -147,7 +146,6 @@
 
     <section class="project-nav-footer">
       <a href="/" class="btn-secondary">← Retour à l'accueil</a>
-      <a href="/cv/CV-Gilles-Helleu-2026.pdf" download class="btn-primary">Télécharger le CV (PDF) →</a>
     </section>
 
     <footer>
